@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "LandSeller": {
+      "title": "Land Seller Listing",
+      "description": "Information about land registered to be sold",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerName": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 15 },
+        "email": { "type": "string", "maxLength": 100 },
+        "locality": { "type": "string", "maxLength": 100 },
+        "landSize": { "type": "number" },
+        "facing": { "type": "string", "maxLength": 20 },
+        "expectedPrice": { "type": "number" },
+        "khataType": { "type": "string", "maxLength": 50 },
+        "hasTitleDeed": { "type": "boolean" },
+        "surveyNumber": { "type": "string", "maxLength": 50 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string" },
+        "status": { "type": "string", "maxLength": 30 }
+      },
+      "required": [
+        "ownerName",
+        "phone",
+        "locality",
+        "landSize",
+        "expectedPrice",
+        "khataType",
+        "createdAt",
+        "status"
+      ]
+    },
+    "LandBuyer": {
+      "title": "Land Buyer Request",
+      "description": "Details of what a buyer is looking for in a land purchase",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "buyerName": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 15 },
+        "email": { "type": "string", "maxLength": 100 },
+        "preferredLocalities": { "type": "string", "maxLength": 200 },
+        "minSize": { "type": "number" },
+        "maxBudget": { "type": "number" },
+        "preferredKhata": { "type": "string", "maxLength": 50 },
+        "purpose": { "type": "string", "maxLength": 50 },
+        "additionalInfo": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string" },
+        "status": { "type": "string", "maxLength": 30 }
+      },
+      "required": [
+        "buyerName",
+        "phone",
+        "preferredLocalities",
+        "minSize",
+        "maxBudget",
+        "preferredKhata",
+        "purpose",
+        "createdAt",
+        "status"
+      ]
+    }
+  },
+  "firestore": {
+    "land_sellers/{sellerId}": {
+      "schema": "LandSeller",
+      "description": "Sellers who list their land for sale"
+    },
+    "land_buyers/{buyerId}": {
+      "schema": "LandBuyer",
+      "description": "Buyers who list land request requirements"
+    }
+  }
+}

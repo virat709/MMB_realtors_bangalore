@@ -1,0 +1,8 @@
+{
+  "name": "MMB Realtors",
+  "description": "Expert assistance for property registrations, documentation, Khata transfer, sale deeds, and title verification services in Bangalore.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
