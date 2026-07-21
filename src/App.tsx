@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import HowItWorks from './components/HowItWorks';
 import Services from './components/Services';
-import AboutTrust from './components/AboutTrust';
 import StampDutyCalculator from './components/StampDutyCalculator';
 import ApplicationTracker from './components/ApplicationTracker';
 import BookingForm from './components/BookingForm';
-import FAQSection from './components/FAQSection';
 import LandHub from './components/LandHub';
 import Footer from './components/Footer';
 import WhatsAppFAB from './components/WhatsAppFAB';
+import ScrollWorldBackground from './components/ScrollWorldBackground';
 import { CalculationResult } from './types';
 import { ShieldCheck, MapPin, Sparkles, Building2, HelpCircle } from 'lucide-react';
 
@@ -49,7 +47,7 @@ export default function App() {
 
   // IntersectionObserver to dynamically change header active states as the user scrolls
   useEffect(() => {
-    const sections = ['hero', 'services', 'calculator', 'tracker', 'faq', 'land-hub', 'booking'];
+    const sections = ['hero', 'services', 'calculator', 'tracker', 'land-hub', 'booking'];
     const observers = sections.map((sectionId) => {
       const element = document.getElementById(sectionId);
       if (!element) return null;
@@ -79,7 +77,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-950 text-slate-700 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+      
+      {/* 3D Scroll World Background Animation */}
+      <ScrollWorldBackground />
       
       {/* Sticky Navigation Header */}
       <Header activeSection={activeSection} onNavigate={handleNavigate} />
@@ -90,23 +91,14 @@ export default function App() {
         {/* 1. Hero Section (with built-in Bangalore background) */}
         <Hero onNavigate={handleNavigate} />
 
-        {/* Step-by-Step Pathway Infographics (Buy, Sell, Legal Service processes) */}
-        <HowItWorks />
-
         {/* 2. Services Section */}
         <Services onSelectService={handleSelectService} />
-
-        {/* 3. Detailed Trust & Split Feature Columns (displays property_papers & happy_homeowners) */}
-        <AboutTrust onNavigate={handleNavigate} />
 
         {/* 4. Interactive Stamp Duty & Registry Fee Calculator */}
         <StampDutyCalculator onEstimateBook={handleEstimateBook} />
 
         {/* 6. Live Interactive SRO/BBMP Progress Tracker */}
         <ApplicationTracker />
-
-        {/* 7. Accordion FAQs tailored for Bangalore property law */}
-        <FAQSection onDiscussArticle={handleSelectService} />
 
         {/* 8. Land Hub for registering Land Buy and Sell demands */}
         <LandHub />

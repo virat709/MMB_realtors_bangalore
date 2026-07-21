@@ -189,18 +189,18 @@ export default function ApplicationTracker() {
   };
 
   return (
-    <section id="tracker" className="py-24 bg-slate-950">
+    <section id="tracker" className="py-24 bg-slate-950 border-t border-slate-850">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-400 font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-500 font-mono uppercase tracking-wider">
             <span>{t.tracker.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight text-center">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-700 tracking-tight text-center">
             {t.tracker.title}
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed text-center">
+          <p className="text-base text-slate-500 leading-relaxed text-center">
             {t.tracker.subtitle}
           </p>
         </div>
@@ -208,26 +208,26 @@ export default function ApplicationTracker() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
           
           {/* Tracking Search Input Box */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl text-left">
+          <div className="bg-slate-900 border border-slate-850 rounded-3xl p-6 sm:p-8 shadow-sm text-left">
             <form onSubmit={handleSearch} className="space-y-4">
-              <label className="text-sm font-semibold text-slate-300 block">
+              <label className="text-sm font-semibold text-slate-600 block">
                 {t.tracker.enterCodeLabel}
               </label>
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="relative flex-1">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-5 h-5" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
                   <input
                     type="text"
                     value={trackingId}
                     onChange={(e) => setTrackingId(e.target.value)}
                     placeholder={t.tracker.placeholder}
-                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-amber-400 focus:outline-none font-mono text-sm uppercase tracking-wider animate-none"
+                    className="w-full pl-12 pr-4 py-4 rounded-xl bg-slate-950 border border-slate-850 text-slate-700 placeholder-slate-400 focus:border-amber-500 focus:outline-none font-mono text-sm uppercase tracking-wider animate-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="px-8 py-4 rounded-xl font-bold bg-amber-500 text-slate-950 hover:bg-amber-400 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 text-sm shrink-0 shadow-lg shadow-amber-500/5"
+                  className="px-8 py-4 rounded-xl font-bold bg-amber-500 text-slate-900 hover:bg-amber-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 text-sm shrink-0 shadow-lg shadow-amber-500/10 cursor-pointer"
                 >
                   {isLoading ? (
                     <>
@@ -242,17 +242,17 @@ export default function ApplicationTracker() {
             </form>
 
             {/* Live Sample Helpers */}
-            <div className="pt-5 border-t border-slate-800/60 mt-5 flex flex-wrap items-center gap-3 text-left">
-              <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">{t.tracker.trySampleLabel}</span>
+            <div className="pt-5 border-t border-slate-850 mt-5 flex flex-wrap items-center gap-3 text-left">
+              <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">{t.tracker.trySampleLabel}</span>
               <button
                 onClick={() => loadSample('BLR-REG-3041')}
-                className="text-xs font-mono font-semibold bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/20 px-3 py-1.5 rounded-lg transition-colors text-left"
+                className="text-xs font-mono font-semibold bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 border border-amber-500/20 px-3 py-1.5 rounded-lg transition-colors text-left cursor-pointer"
               >
                 {t.tracker.sample1}
               </button>
               <button
                 onClick={() => loadSample('BLR-KHA-8492')}
-                className="text-xs font-mono font-semibold bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border border-blue-500/20 px-3 py-1.5 rounded-lg transition-colors text-left"
+                className="text-xs font-mono font-semibold bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 border border-blue-500/20 px-3 py-1.5 rounded-lg transition-colors text-left cursor-pointer"
               >
                 {t.tracker.sample2}
               </button>
@@ -261,32 +261,32 @@ export default function ApplicationTracker() {
 
           {/* Tracking Results Output */}
           {error && (
-            <div className="p-5 bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-semibold rounded-2xl text-left">
+            <div className="p-5 bg-red-500/10 border border-red-500/20 text-red-600 text-sm font-semibold rounded-2xl text-left">
               {error}
             </div>
           )}
 
           {currentApp && (
-            <div className="bg-slate-900 border-2 border-amber-500/10 rounded-3xl p-6 sm:p-8 shadow-2xl text-left space-y-6 relative overflow-hidden">
+            <div className="bg-slate-900 border border-slate-850 rounded-3xl p-6 sm:p-8 shadow-lg text-left space-y-6 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-36 h-36 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
               
               {/* Result Header */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-850">
                 <div className="space-y-1 text-left">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs font-bold font-mono tracking-wider text-amber-400 bg-amber-500/15 border border-amber-500/30 px-2.5 py-1 rounded-full uppercase">
+                    <span className="text-xs font-bold font-mono tracking-wider text-amber-600 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full uppercase">
                       {t.tracker.reference}: {currentApp.id}
                     </span>
-                    <span className="text-xs font-mono text-slate-500">{t.tracker.registryNode}</span>
+                    <span className="text-xs font-mono text-slate-400">{t.tracker.registryNode}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-white tracking-tight">{currentApp.serviceSelected}</h3>
+                  <h3 className="text-lg font-bold text-slate-700 tracking-tight">{currentApp.serviceSelected}</h3>
                 </div>
-
-                <div className="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-800 flex items-center space-x-3 shrink-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
+ 
+                <div className="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-850 flex items-center space-x-3 shrink-0">
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
                   <div className="text-left">
-                    <span className="text-[9px] uppercase font-mono text-slate-500 block">{t.tracker.currentStatus}</span>
-                    <span className="text-xs font-bold text-slate-200 block">
+                    <span className="text-[9px] uppercase font-mono text-slate-400 block">{t.tracker.currentStatus}</span>
+                    <span className="text-xs font-bold text-slate-700 block">
                       {isKn 
                         ? (currentApp.overallStatus === 'In Progress' ? 'ಪ್ರಗತಿಯಲ್ಲಿದೆ' : 'ಉಪ-ನೋಂದಣಾಧಿಕಾರಿ ಭೇಟಿಯ ಸಮಯಕ್ಕಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ')
                         : currentApp.overallStatus
@@ -298,13 +298,13 @@ export default function ApplicationTracker() {
 
               {/* Applicant & Property info */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-medium text-left">
-                <div className="p-3.5 bg-slate-950/50 rounded-xl border border-slate-800/60">
-                  <span className="text-[10px] text-slate-500 uppercase font-mono block">{t.tracker.primaryApplicant}</span>
-                  <span className="text-sm font-semibold text-slate-200 mt-1 block">{currentApp.applicantName}</span>
+                <div className="p-3.5 bg-slate-950 rounded-xl border border-slate-850">
+                  <span className="text-[10px] text-slate-400 uppercase font-mono block">{t.tracker.primaryApplicant}</span>
+                  <span className="text-sm font-semibold text-slate-700 mt-1 block">{currentApp.applicantName}</span>
                 </div>
-                <div className="p-3.5 bg-slate-950/50 rounded-xl border border-slate-800/60 text-left">
-                  <span className="text-[10px] text-slate-500 uppercase font-mono block">{t.tracker.propertyLocation}</span>
-                  <span className="text-sm font-semibold text-slate-200 mt-1 block leading-normal line-clamp-1" title={currentApp.propertyAddress}>
+                <div className="p-3.5 bg-slate-950 rounded-xl border border-slate-850 text-left">
+                  <span className="text-[10px] text-slate-400 uppercase font-mono block">{t.tracker.propertyLocation}</span>
+                  <span className="text-sm font-semibold text-slate-700 mt-1 block leading-normal line-clamp-1" title={currentApp.propertyAddress}>
                     {currentApp.propertyAddress}
                   </span>
                 </div>
@@ -312,11 +312,11 @@ export default function ApplicationTracker() {
 
               {/* Steps timeline */}
               <div className="pt-6 text-left">
-                <h4 className="text-xs font-bold font-mono text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-1.5 text-left">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" /> {t.tracker.workflowTitle}
+                <h4 className="text-xs font-bold font-mono text-slate-500 uppercase tracking-wider mb-6 flex items-center gap-1.5 text-left">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" /> {t.tracker.workflowTitle}
                 </h4>
 
-                <div className="relative pl-6 sm:pl-8 border-l border-slate-800 space-y-8 pb-4 ml-3">
+                <div className="relative pl-6 sm:pl-8 border-l border-slate-850 space-y-8 pb-4 ml-3">
                   {currentApp.steps.map((step) => {
                     const isCompleted = step.status === 'completed';
                     const isInProgress = step.status === 'in_progress';
@@ -325,9 +325,9 @@ export default function ApplicationTracker() {
                       <div key={step.id} className="relative">
                         {/* Bullet Marker */}
                         <div className={`absolute -left-[37px] sm:-left-[45px] top-1.5 p-1 rounded-full border bg-slate-900 transition-colors ${
-                          isCompleted ? 'border-emerald-500 text-emerald-400 bg-emerald-950/30' :
-                          isInProgress ? 'border-amber-400 text-amber-400 bg-amber-950/30' :
-                          'border-slate-800 text-slate-600 bg-slate-950'
+                          isCompleted ? 'border-emerald-500 text-emerald-600 bg-emerald-500/10' :
+                          isInProgress ? 'border-amber-500 text-amber-500 bg-amber-500/10' :
+                          'border-slate-850 text-slate-400 bg-slate-950'
                         }`}>
                           {isCompleted ? <CheckCircle2 className="w-5 h-5 shrink-0" /> :
                            isInProgress ? <Clock className="w-5 h-5 shrink-0 animate-spin" /> :
@@ -338,23 +338,23 @@ export default function ApplicationTracker() {
                         <div className="space-y-1.5 text-left">
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                             <h5 className={`text-sm font-bold ${
-                              isCompleted ? 'text-slate-300' :
-                              isInProgress ? 'text-amber-400 font-extrabold' : 'text-slate-500'
+                              isCompleted ? 'text-slate-600' :
+                              isInProgress ? 'text-amber-500 font-extrabold' : 'text-slate-400'
                             }`}>
                               Step {step.id}: {step.title}
                             </h5>
                             {step.date && (
-                              <span className="text-[10px] font-mono text-slate-500 bg-slate-950 border border-slate-800/80 px-2 py-0.5 rounded flex items-center w-fit">
-                                <Calendar className="w-3 h-3 mr-1 text-slate-500" />
+                              <span className="text-[10px] font-mono text-slate-500 bg-slate-950 border border-slate-850 px-2 py-0.5 rounded flex items-center w-fit">
+                                <Calendar className="w-3 h-3 mr-1 text-slate-400" />
                                 {step.date}
                               </span>
                             )}
                           </div>
-                          <p className="text-xs text-slate-400 leading-relaxed pr-2 text-left">
+                          <p className="text-xs text-slate-500 leading-relaxed pr-2 text-left">
                             {step.description}
                           </p>
                           {step.remarks && (
-                            <div className="text-[11px] font-mono p-2 bg-slate-950/80 border border-slate-850 rounded-lg text-slate-300 leading-normal text-left">
+                            <div className="text-[11px] font-mono p-2 bg-slate-950 border border-slate-850 rounded-lg text-slate-600 leading-normal text-left">
                               <span className="text-amber-500 font-semibold uppercase text-[9px] mr-1.5">{t.tracker.remarksLabel}</span>
                               {step.remarks}
                             </div>

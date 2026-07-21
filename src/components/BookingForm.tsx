@@ -208,50 +208,50 @@ Submitted via MMB Legal Assistant Portal.`;
   };
 
   return (
-    <section id="booking" className="py-24 bg-slate-900 border-t border-slate-800">
+    <section id="booking" className="py-24 bg-slate-900 border-t border-slate-850">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-400 font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-500 font-mono uppercase tracking-wider">
             <span>{t.booking.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-700 tracking-tight">
             {t.booking.title}
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
+          <p className="text-base text-slate-500 leading-relaxed">
             {t.booking.subtitle}
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           {!isSubmitted ? (
-            <div className="bg-slate-950/80 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl text-left relative overflow-hidden">
+            <div className="bg-slate-950 border border-slate-850 rounded-3xl p-6 sm:p-10 shadow-sm text-left relative overflow-hidden">
               <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 
                 {errorMsg && (
-                  <div className="p-4 bg-red-500/15 border border-red-500/30 text-red-400 rounded-xl text-xs font-semibold flex items-center space-x-2">
+                  <div className="p-4 bg-red-500/15 border border-red-500/30 text-red-600 rounded-xl text-xs font-semibold flex items-center space-x-2">
                     <AlertCircle className="w-4 h-4 shrink-0" />
                     <span>{errorMsg}</span>
                   </div>
                 )}
 
                 {prefilledService && (
-                  <div className="p-4 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-xl text-xs font-bold flex items-center justify-between">
+                  <div className="p-4 bg-amber-500/10 border border-amber-500/30 text-amber-600 rounded-xl text-xs font-bold flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <Sparkles className="w-4 h-4 shrink-0" />
                       <span>
                         {isKn ? 'ಪೂರ್ವ ಆಯ್ಕೆ ಮಾಡಿದ ಸೇವೆ:' : 'Prefilled Service Selected:'}{' '}
-                        <span className="text-white font-black">{formData.serviceType}</span>
+                        <span className="text-slate-700 font-black">{formData.serviceType}</span>
                       </span>
                     </div>
                     {onClearPrefilled && (
                       <button 
                         type="button"
                         onClick={onClearPrefilled} 
-                        className="text-[10px] uppercase font-mono font-black text-amber-500 hover:text-white"
+                        className="text-[10px] uppercase font-mono font-black text-amber-600 hover:text-amber-700 cursor-pointer"
                       >
                         {isKn ? 'ರದ್ದುಗೊಳಿಸಿ' : 'Reset Select'}
                       </button>
@@ -263,17 +263,17 @@ Submitted via MMB Legal Assistant Portal.`;
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Full Name */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldFullName}
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 w-4.5 h-4.5" />
+                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4.5 h-4.5" />
                       <input
                         type="text"
                         value={formData.fullName}
                         onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
                         placeholder={isKn ? 'ಉದಾ: ಪ್ರಕಾಶ್ ಹೆಗಡೆ' : 'e.g. Amit Kumar Sharma'}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none"
                         required
                       />
                     </div>
@@ -281,17 +281,17 @@ Submitted via MMB Legal Assistant Portal.`;
 
                   {/* Phone Number */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldPhone}
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 w-4.5 h-4.5" />
+                      <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4.5 h-4.5" />
                       <input
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                         placeholder={isKn ? '೧೦-ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ' : '10-Digit Mobile (e.g. 9845012345)'}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none font-mono"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none font-mono"
                         required
                       />
                     </div>
@@ -299,37 +299,37 @@ Submitted via MMB Legal Assistant Portal.`;
 
                   {/* Email (Optional) */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldEmail}
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 w-4.5 h-4.5" />
+                      <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4.5 h-4.5" />
                       <input
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                         placeholder={isKn ? 'ಇಮೇಲ್ ವಿಳಾಸ (ಐಚ್ಛಿಕ)' : 'e.g. amit@example.com'}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none"
                       />
                     </div>
                   </div>
 
                   {/* Bangalore Locality */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldLocality}
                     </label>
                     <div className="relative">
-                      <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 w-4.5 h-4.5" />
+                      <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4.5 h-4.5" />
                       <select
                         value={formData.locality}
                         onChange={(e) => setFormData(prev => ({ ...prev, locality: e.target.value }))}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none appearance-none"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none appearance-none cursor-pointer"
                         required
                       >
                         <option value="">{isKn ? '-- ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ --' : '-- Choose Locality --'}</option>
                         {bangaloreLocalities.map((loc, i) => (
-                          <option key={i} value={loc}>{loc}</option>
+                          <option key={i} value={loc} className="text-slate-700 bg-white">{loc}</option>
                         ))}
                       </select>
                     </div>
@@ -337,29 +337,29 @@ Submitted via MMB Legal Assistant Portal.`;
 
                   {/* Property Type */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldPropertyType}
                     </label>
                     <select
                       value={formData.propertyType}
                       onChange={(e) => setFormData(prev => ({ ...prev, propertyType: e.target.value as PropertyType }))}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none cursor-pointer"
                     >
                       {propertyTypes.map((pt) => (
-                        <option key={pt.value} value={pt.value}>{pt.label}</option>
+                        <option key={pt.value} value={pt.value} className="text-slate-700 bg-white">{pt.label}</option>
                       ))}
                     </select>
                   </div>
 
                   {/* Service Type */}
                   <div className="space-y-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldServiceType}
                     </label>
                     <select
                       value={formData.serviceType}
                       onChange={(e) => setFormData(prev => ({ ...prev, serviceType: e.target.value }))}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none cursor-pointer"
                     >
                       {(() => {
                         const displayedServices = [...servicesList];
@@ -367,7 +367,7 @@ Submitted via MMB Legal Assistant Portal.`;
                           displayedServices.unshift(formData.serviceType);
                         }
                         return displayedServices.map((service, i) => (
-                          <option key={i} value={service}>{service}</option>
+                          <option key={i} value={service} className="text-slate-700 bg-white">{service}</option>
                         ));
                       })()}
                     </select>
@@ -378,17 +378,17 @@ Submitted via MMB Legal Assistant Portal.`;
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Preferred Date */}
                   <div className="space-y-2 md:col-span-1">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldDate}
                     </label>
                     <div className="relative">
-                      <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 w-4.5 h-4.5 pointer-events-none" />
+                      <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4.5 h-4.5 pointer-events-none" />
                       <input
                         type="date"
                         value={formData.preferredDate}
                         onChange={(e) => setFormData(prev => ({ ...prev, preferredDate: e.target.value }))}
                         min={new Date().toISOString().split('T')[0]} // restrict previous dates
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none font-mono"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none font-mono"
                         required
                       />
                     </div>
@@ -396,7 +396,7 @@ Submitted via MMB Legal Assistant Portal.`;
 
                   {/* Notes / Special queries */}
                   <div className="space-y-2 md:col-span-2">
-                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <label className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.fieldNotes}
                     </label>
                     <input
@@ -404,13 +404,13 @@ Submitted via MMB Legal Assistant Portal.`;
                       value={formData.notes}
                       onChange={(e) => setFormData(prev => ({ ...prev, notes: e.target.value }))}
                       placeholder={t.booking.fieldNotesPlaceholder}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-slate-200 text-sm focus:border-amber-400 focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:border-amber-500 focus:outline-none"
                     />
                   </div>
                 </div>
 
                 {/* Consent text */}
-                <p className="text-[10px] text-slate-500 leading-normal font-mono text-center">
+                <p className="text-[10px] text-slate-400 leading-normal font-mono text-center">
                   {isKn 
                     ? '*ಬುಕ್ ಮಾಡುವ ಮೂಲಕ, ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಆಸ್ತಿ ನೋಂದಣಿ ಪ್ರಕ್ರಿಯೆಯ ಅಪ್‌ಡೇಟ್‌ಗಳು, ಕಾನೂನು ಮುನ್ನೆಚ್ಚರಿಕೆ ಮಾಹಿತಿ ಮತ್ತು ಡೀಡ್ ಪ್ರತಿಗಳನ್ನು ಪಡೆಯಲು ನೀವು ಒಪ್ಪಿಗೆ ನೀಡುತ್ತೀರಿ. ನಿಮ್ಮ ವಿವರಗಳನ್ನು ನಾವು ಗೌಪ್ಯವಾಗಿಡುತ್ತೇವೆ.'
                     : '*By scheduling, you consent to receive legal compliance alerts, token status updates, and digital deed copies on WhatsApp. We strictly do not share your contact details.'
@@ -422,7 +422,7 @@ Submitted via MMB Legal Assistant Portal.`;
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full sm:w-auto px-12 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shadow-xl shadow-amber-500/10 hover:shadow-amber-500/20 active:scale-98 disabled:opacity-50 font-sans text-base text-center cursor-pointer"
+                    className="w-full sm:w-auto px-12 py-4 rounded-xl font-bold bg-amber-500 hover:bg-amber-600 text-slate-900 transition-all shadow-lg shadow-amber-500/10 active:scale-98 disabled:opacity-50 font-sans text-base text-center cursor-pointer"
                   >
                     {submitting ? t.booking.submitting : t.booking.submitBtn}
                   </button>
@@ -432,57 +432,57 @@ Submitted via MMB Legal Assistant Portal.`;
             </div>
           ) : (
             /* Submission Success Panel */
-            <div className="bg-slate-950/90 border border-emerald-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl text-center relative overflow-hidden">
+            <div className="bg-slate-950 border border-slate-850 rounded-3xl p-8 sm:p-12 shadow-sm text-center relative overflow-hidden">
               <div className="absolute top-0 left-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
               
               <div className="space-y-6 max-w-lg mx-auto">
-                <div className="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30 shadow-lg animate-bounce">
+                <div className="w-16 h-16 bg-emerald-500/10 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30 shadow-sm animate-bounce">
                   <CheckCircle className="w-8 h-8" />
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold tracking-wider text-emerald-400 uppercase bg-emerald-500/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-mono font-bold tracking-wider text-emerald-600 bg-emerald-500/10 px-3 py-1 rounded-full">
                     {isKn ? 'ಯಶಸ್ವಿಯಾಗಿ ನಿಗದಿಯಾಗಿದೆ' : 'Consultation Scheduled'}
                   </span>
-                  <h3 className="text-2xl font-black text-white tracking-tight">
+                  <h3 className="text-2xl font-black text-slate-700 tracking-tight">
                     {t.booking.successTitle}
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-500 leading-relaxed">
                     {isKn 
-                      ? <>ಧನ್ಯವಾದಗಳು, <span className="text-white font-bold">{formData.fullName}</span>. ನಿಮ್ಮ ಬೆಂಗಳೂರು ಆಸ್ತಿ ಪತ್ರಗಳ ಪರಿಶೀಲನಾ ಕೋರಿಕೆಯನ್ನು ನಾವು ಯಶಸ್ವಿಯಾಗಿ ನೋಂದಾಯಿಸಿಕೊಂಡಿದ್ದೇವೆ.</>
-                      : <>Thank you, <span className="text-white font-bold">{formData.fullName}</span>. We have locked in your Bangalore property papers audit request.</>
+                      ? <>ಧನ್ಯವಾದಗಳು, <span className="text-slate-700 font-bold">{formData.fullName}</span>. ನಿಮ್ಮ ಬೆಂಗಳೂರು ಆಸ್ತಿ ಪತ್ರಗಳ ಪರಿಶೀಲನಾ ಕೋರಿಕೆಯನ್ನು ನಾವು ಯಶಸ್ವಿಯಾಗಿ ನೋಂದಾಯಿಸಿಕೊಂಡಿದ್ದೇವೆ.</>
+                      : <>Thank you, <span className="text-slate-700 font-bold">{formData.fullName}</span>. We have locked in your Bangalore property papers audit request.</>
                     }
                   </p>
                 </div>
 
                 {/* Appointment Detail Grid */}
-                <div className="p-5 bg-slate-900 border border-slate-800 rounded-2xl text-left space-y-3.5 font-mono text-xs">
-                  <div className="flex justify-between items-center text-slate-400">
+                <div className="p-5 bg-slate-900 border border-slate-850 rounded-2xl text-left space-y-3.5 font-mono text-xs">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span>{t.booking.refId}:</span>
-                    <span className="text-amber-400 font-bold">{currentReference}</span>
+                    <span className="text-amber-500 font-bold">{currentReference}</span>
                   </div>
-                  <div className="flex justify-between items-center text-slate-400">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span>{isKn ? 'ಸೇವೆ:' : 'Service:'}</span>
-                    <span className="text-slate-200 font-bold text-right truncate max-w-[200px]">{formData.serviceType}</span>
+                    <span className="text-slate-700 font-bold text-right truncate max-w-[200px]">{formData.serviceType}</span>
                   </div>
-                  <div className="flex justify-between items-center text-slate-400">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span>{isKn ? 'ನಿಗದಿತ ದಿನಾಂಕ:' : 'Callback Scheduled:'}</span>
-                    <span className="text-slate-200 font-bold">{formData.preferredDate}</span>
+                    <span className="text-slate-700 font-bold">{formData.preferredDate}</span>
                   </div>
-                  <div className="flex justify-between items-center text-slate-400">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span>{isKn ? 'ಅಧಿಕಾರಿ ನಿಯೋಜನೆ:' : 'Office Assignee:'}</span>
-                    <span className="text-slate-200 font-bold">{isKn ? 'ಶ್ರೀ ಮಂಜುನಾಥ್ ಜಿ. (ಹಿರಿಯ ಸಲಹೆಗಾರರು)' : 'Mr. Sandeep Hegde (Senior Advisor)'}</span>
+                    <span className="text-slate-700 font-bold">{isKn ? 'ಶ್ರೀ ಮಂಜುನಾಥ್ ಜಿ. (ಹಿರಿಯ ಸಲಹೆಗಾರರು)' : 'Mr. Sandeep Hegde (Senior Advisor)'}</span>
                   </div>
-                  <div className="flex justify-between items-center text-slate-400 pt-2 border-t border-slate-800">
+                  <div className="flex justify-between items-center text-slate-500 pt-2 border-t border-slate-850">
                     <span>{isKn ? 'ನಿಮ್ಮ ಪ್ರದೇಶ:' : 'Your Locality:'}</span>
-                    <span className="text-slate-300 font-bold">{formData.locality}</span>
+                    <span className="text-slate-600 font-bold">{formData.locality}</span>
                   </div>
                 </div>
 
                 {/* SRO / BBMP Trust statement */}
-                <div className="flex items-start space-x-3 text-left p-4 bg-slate-900/40 rounded-xl border border-slate-850">
-                  <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                <div className="flex items-start space-x-3 text-left p-4 bg-slate-900 rounded-xl border border-slate-850">
+                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <p className="text-[11px] text-slate-500 leading-relaxed">
                     {isKn 
                       ? 'ನಮ್ಮ ತಜ್ಞರು ಕಾವೇರಿ ನೋಂದಣಿ ಪೋರ್ಟಲ್ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ನಿಮಗೆ ನಿಖರವಾದ ಮತ್ತು ನೇರವಾದ ಸಲಹೆಯನ್ನು ನೀಡಲು ಸಿದ್ಧರಾಗಿ ನಿಮಗೆ ಕರೆ ಮಾಡುತ್ತಾರೆ.'
                       : 'Our compliance expert will review the Kaveri registration portal and draft standard agreements prior to calling you, ensuring you get concrete, actionable advice immediately.'
@@ -491,17 +491,17 @@ Submitted via MMB Legal Assistant Portal.`;
                 </div>
 
                 {/* Instant Data Delivery Channel */}
-                <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 text-left space-y-3.5 relative overflow-hidden">
+                <div className="bg-slate-900 border border-slate-850 rounded-2xl p-5 text-left space-y-3.5 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400">
+                    <span className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500">
                       {t.booking.syncTitle}
                     </span>
-                    <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-mono font-bold">
+                    <span className="text-[10px] bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-0.5 rounded-full font-mono font-bold">
                       {isKn ? 'ಸಿದ್ಧವಾಗಿದೆ' : 'Ready'}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {t.booking.syncDesc}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -509,14 +509,14 @@ Submitted via MMB Legal Assistant Portal.`;
                       href={getWhatsAppLink()}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white transition-colors font-bold text-xs shadow-lg shadow-emerald-950/20 cursor-pointer"
+                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white transition-colors font-bold text-xs shadow shadow-emerald-950/20 cursor-pointer"
                     >
                       <MessageCircle className="w-4 h-4 fill-white/10" />
                       {t.booking.sendWhatsApp}
                     </a>
                     <a
                       href="tel:+916366310992"
-                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors font-bold text-xs cursor-pointer"
+                      className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 transition-colors font-bold text-xs cursor-pointer"
                     >
                       <Phone className="w-4 h-4" />
                       {isKn ? 'ಕರೆ ಮಾಡಿ: +91 63663 10992' : 'Call +91 63663 10992'}
@@ -527,13 +527,13 @@ Submitted via MMB Legal Assistant Portal.`;
                 <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={handleReset}
-                    className="px-6 py-2.5 rounded-xl font-bold text-xs bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                    className="px-6 py-2.5 rounded-xl font-bold text-xs bg-slate-900 border border-slate-850 text-slate-500 hover:text-slate-900 hover:bg-slate-950 transition-colors cursor-pointer"
                   >
                     {t.booking.resetForm}
                   </button>
                   <a
                     href="tel:+916366310992"
-                    className="px-6 py-2.5 rounded-xl font-bold text-xs bg-amber-500 text-slate-950 hover:bg-amber-400 transition-colors flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/10"
+                    className="px-6 py-2.5 rounded-xl font-bold text-xs bg-amber-500 text-slate-900 hover:bg-amber-600 transition-colors flex items-center justify-center gap-1.5 shadow-md shadow-amber-500/10"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     {isKn ? 'ಸಹಾಯವಾಣಿಗೆ ನೇರ ಕರೆ ಮಾಡಿ' : 'Call Helpline Directly'}

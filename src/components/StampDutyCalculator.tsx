@@ -92,18 +92,18 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
   };
 
   return (
-    <section id="calculator" className="py-24 bg-slate-950 border-t border-slate-900">
+    <section id="calculator" className="py-24 bg-slate-950 border-t border-slate-850">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-400 font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-500 font-mono uppercase tracking-wider">
             <span>{t.calculator.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-700 tracking-tight">
             {t.calculator.title}
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
+          <p className="text-base text-slate-500 leading-relaxed">
             {t.calculator.subtitle}
           </p>
         </div>
@@ -112,10 +112,10 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
           
           {/* Controls - Left (7 Cols) */}
-          <div className="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-8 text-left">
+          <div className="lg:col-span-7 bg-slate-900 border border-slate-850 rounded-3xl p-6 sm:p-8 space-y-8 text-left shadow-sm">
             <div>
-              <h3 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-amber-400" />
+              <h3 className="text-xl font-bold text-slate-700 tracking-tight flex items-center gap-2">
+                <Calculator className="w-5 h-5 text-amber-500" />
                 {t.calculator.configureTitle}
               </h3>
               <p className="text-xs text-slate-500 mt-1">{t.calculator.configureDesc}</p>
@@ -124,18 +124,18 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
             {/* Property Value Slider & Number Input */}
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <label className="text-sm font-semibold text-slate-300">{t.calculator.guidanceLabel}</label>
+                <label className="text-sm font-semibold text-slate-600">{t.calculator.guidanceLabel}</label>
                 <div className="flex items-center space-x-2">
-                  <div className="relative rounded-lg bg-slate-950 border border-slate-800 px-3 py-1.5 flex items-center">
-                    <span className="text-slate-500 text-xs mr-1 font-mono">₹</span>
+                  <div className="relative rounded-lg bg-slate-950 border border-slate-850 px-3 py-1.5 flex items-center">
+                    <span className="text-slate-400 text-xs mr-1 font-mono">₹</span>
                     <input 
                       type="number" 
                       value={propertyValue} 
                       onChange={(e) => setPropertyValue(Math.max(100000, Number(e.target.value)))}
-                      className="bg-transparent font-mono text-white text-sm font-bold focus:outline-none w-28 sm:w-36 text-right"
+                      className="bg-transparent font-mono text-slate-700 text-sm font-bold focus:outline-none w-28 sm:w-36 text-right"
                     />
                   </div>
-                  <span className="text-xs font-bold font-mono text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded">
+                  <span className="text-xs font-bold font-mono text-amber-600 bg-amber-300 px-2.5 py-1 rounded">
                     {formatLakhsOrCrores(propertyValue)}
                   </span>
                 </div>
@@ -150,9 +150,9 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
                   step="100000"
                   value={propertyValue}
                   onChange={(e) => setPropertyValue(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+                  className="w-full h-2 bg-slate-850 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
-                <div className="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
+                <div className="flex justify-between text-[10px] text-slate-400 font-mono mt-1">
                   <span>{formattedValueLabel(500000)}</span>
                   <span>{formattedValueLabel(12500000)}</span>
                   <span>{formattedValueLabel(25000000)}</span>
@@ -164,7 +164,7 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
 
             {/* Property Type Grid Selector */}
             <div className="space-y-3">
-              <label className="text-sm font-semibold text-slate-300 block">{t.calculator.categoryLabel}</label>
+              <label className="text-sm font-semibold text-slate-600 block">{t.calculator.categoryLabel}</label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
                   { id: 'apartment', label: t.calculator.categories.apartment },
@@ -175,10 +175,10 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
                   <button
                     key={item.id}
                     onClick={() => setPropertyType(item.id as PropertyType)}
-                    className={`py-3 px-2 rounded-xl text-xs font-bold border transition-all duration-200 ${
+                    className={`py-3 px-2 rounded-xl text-xs font-bold border transition-all duration-200 cursor-pointer ${
                       propertyType === item.id
-                        ? 'border-amber-400 bg-amber-500/10 text-amber-400 font-extrabold'
-                        : 'border-slate-800 bg-slate-950/40 text-slate-400 hover:text-white hover:border-slate-700'
+                        ? 'border-amber-500 bg-amber-300 text-amber-600 font-extrabold'
+                        : 'border-slate-850 bg-slate-950 text-slate-500 hover:text-slate-900 hover:border-slate-400'
                     }`}
                   >
                     {item.label}
@@ -189,7 +189,7 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
 
             {/* BBMP / Registrar Zone Selector */}
             <div className="space-y-3">
-              <label className="text-sm font-semibold text-slate-300 block">{t.calculator.locationLabel}</label>
+              <label className="text-sm font-semibold text-slate-600 block">{t.calculator.locationLabel}</label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {[
                   { id: 'bbmp', label: t.calculator.locations.bbmp.label, desc: t.calculator.locations.bbmp.desc },
@@ -199,24 +199,24 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
                   <button
                     key={item.id}
                     onClick={() => setBbmpZone(item.id as BBMPZone)}
-                    className={`p-4 rounded-xl text-left border transition-all duration-200 flex flex-col justify-between h-24 ${
+                    className={`p-4 rounded-xl text-left border transition-all duration-200 flex flex-col justify-between h-24 cursor-pointer ${
                       bbmpZone === item.id
-                        ? 'border-amber-400 bg-amber-500/10 text-amber-400'
-                        : 'border-slate-800 bg-slate-950/40 text-slate-400 hover:border-slate-700'
+                        ? 'border-amber-500 bg-amber-300 text-amber-600'
+                        : 'border-slate-850 bg-slate-950 text-slate-500 hover:border-slate-400 hover:text-slate-900'
                     }`}
                   >
                     <span className="text-xs font-black block leading-tight">{item.label}</span>
-                    <span className="text-[10px] text-slate-400 mt-1 block">{item.desc}</span>
+                    <span className="text-[10px] text-slate-500 mt-1 block">{item.desc}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Guidance value advisory */}
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 flex items-start space-x-3 text-xs text-slate-400 leading-relaxed">
+            <div className="bg-slate-950 border border-slate-850 rounded-xl p-4 flex items-start space-x-3 text-xs text-slate-500 leading-relaxed">
               <ShieldAlert className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
               <div>
-                <span className="text-white font-bold block mb-0.5">{t.calculator.guidanceRuleTitle}</span>
+                <span className="text-slate-700 font-bold block mb-0.5">{t.calculator.guidanceRuleTitle}</span>
                 {t.calculator.guidanceRuleDesc}
               </div>
             </div>
@@ -225,72 +225,72 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
           {/* cost breakdown - Right (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
             {result && (
-              <div className="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-amber-500/20 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+              <div className="bg-slate-900 border border-slate-850 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl pointer-events-none" />
                 
                 {/* Header */}
-                <div className="text-left pb-4 border-b border-slate-800">
-                  <span className="text-[10px] font-mono tracking-wider text-amber-400 font-semibold uppercase flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" /> {t.calculator.kaveriCostHeader}
+                <div className="text-left pb-4 border-b border-slate-850">
+                  <span className="text-[10px] font-mono tracking-wider text-amber-500 font-semibold uppercase flex items-center gap-1">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500" /> {t.calculator.kaveriCostHeader}
                   </span>
-                  <h4 className="text-lg font-bold text-white mt-1">{t.calculator.estimateTitle}</h4>
+                  <h4 className="text-lg font-bold text-slate-700 mt-1">{t.calculator.estimateTitle}</h4>
                 </div>
  
                 {/* Main Estimated Cost Big Display */}
                 <div className="py-6 text-left">
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block">{t.calculator.totalEstimatedCost}</span>
-                  <span className="text-3xl sm:text-4xl font-black text-white tracking-tight block mt-1">
+                  <span className="text-xs font-mono text-slate-500 uppercase tracking-widest block">{t.calculator.totalEstimatedCost}</span>
+                  <span className="text-3xl sm:text-4xl font-black text-slate-700 tracking-tight block mt-1">
                     {formatCurrency(result.totalEstimatedCost)}
                   </span>
-                  <p className="text-[10px] text-slate-400 mt-1 font-mono">
+                  <p className="text-[10px] text-slate-500 mt-1 font-mono">
                     {t.calculator.govFees}: {formatCurrency(result.totalGovtFees)} | {t.calculator.serviceFees}: {formatCurrency(result.serviceFee)}
                   </p>
                 </div>
 
                 {/* Detailed Fees Breakdown */}
-                <div className="space-y-3.5 border-t border-slate-800/80 pt-5 text-sm">
+                <div className="space-y-3.5 border-t border-slate-850 pt-5 text-sm">
                   {/* Base Stamp Duty */}
-                  <div className="flex justify-between items-center text-slate-400">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span className="flex items-center gap-1.5">
-                      {t.calculator.baseStampDuty} <span className="text-[10px] font-mono font-bold text-slate-500">(5.0%)</span>
+                      {t.calculator.baseStampDuty} <span className="text-[10px] font-mono font-bold text-slate-400">(5.0%)</span>
                     </span>
-                    <span className="font-mono text-white text-xs">{formatCurrency(result.stampDutyAmount)}</span>
+                    <span className="font-mono text-slate-700 text-xs font-semibold">{formatCurrency(result.stampDutyAmount)}</span>
                   </div>
 
                   {/* Surcharges & Cess */}
-                  <div className="flex justify-between items-center text-slate-400">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span className="flex items-center gap-1.5">
-                      {t.calculator.infraCess} <span className="text-[10px] font-mono font-bold text-slate-500">(10% of SD)</span>
+                      {t.calculator.infraCess} <span className="text-[10px] font-mono font-bold text-slate-400">(10% of SD)</span>
                     </span>
-                    <span className="font-mono text-white text-xs">{formatCurrency(result.cessAmount)}</span>
+                    <span className="font-mono text-slate-700 text-xs font-semibold">{formatCurrency(result.cessAmount)}</span>
                   </div>
 
                   {bbmpZone !== 'panchayat_rural' && (
-                    <div className="flex justify-between items-center text-slate-400">
+                    <div className="flex justify-between items-center text-slate-500">
                       <span className="flex items-center gap-1.5">
-                        {t.calculator.urbanSurcharge} <span className="text-[10px] font-mono font-bold text-slate-500">({bbmpZone === 'bbmp' ? '2%' : '3%'} of SD)</span>
+                        {t.calculator.urbanSurcharge} <span className="text-[10px] font-mono font-bold text-slate-400">({bbmpZone === 'bbmp' ? '2%' : '3%'} of SD)</span>
                       </span>
-                      <span className="font-mono text-white text-xs">{formatCurrency(result.surchargeAmount)}</span>
+                      <span className="font-mono text-slate-700 text-xs font-semibold">{formatCurrency(result.surchargeAmount)}</span>
                     </div>
                   )}
 
                   {/* Registration Fee */}
-                  <div className="flex justify-between items-center text-slate-400">
+                  <div className="flex justify-between items-center text-slate-500">
                     <span className="flex items-center gap-1.5">
-                      {t.calculator.registrationCharge} <span className="text-[10px] font-mono font-bold text-slate-500">(1.0%)</span>
+                      {t.calculator.registrationCharge} <span className="text-[10px] font-mono font-bold text-slate-400">(1.0%)</span>
                     </span>
-                    <span className="font-mono text-white text-xs">{formatCurrency(result.registrationFeeAmount)}</span>
+                    <span className="font-mono text-slate-700 text-xs font-semibold">{formatCurrency(result.registrationFeeAmount)}</span>
                   </div>
 
                   {/* Divider */}
-                  <div className="h-px bg-slate-800 my-1" />
+                  <div className="h-px bg-slate-850 my-1" />
 
                   {/* Service Charge */}
-                  <div className="flex justify-between items-center text-slate-400">
-                    <span className="flex items-center font-semibold text-amber-400">
+                  <div className="flex justify-between items-center text-slate-500">
+                    <span className="flex items-center font-semibold text-amber-500">
                       {t.calculator.flatLegalFee}
                     </span>
-                    <span className="font-mono text-amber-400 font-bold text-xs">{formatCurrency(result.serviceFee)}</span>
+                    <span className="font-mono text-amber-600 font-bold text-xs">{formatCurrency(result.serviceFee)}</span>
                   </div>
                 </div>
 
@@ -302,7 +302,7 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
                 {/* CTA */}
                 <button
                   onClick={() => onEstimateBook(result, `${propertyType.toUpperCase()} Registry Assistance (Value: ${formatLakhsOrCrores(propertyValue)})`)}
-                  className="w-full mt-6 py-4 rounded-xl font-bold bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all flex items-center justify-center gap-2 text-sm shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 active:scale-95"
+                  className="w-full mt-6 py-4 rounded-xl font-bold bg-amber-500 text-slate-900 hover:bg-amber-600 transition-all flex items-center justify-center gap-2 text-sm shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 active:scale-95 cursor-pointer"
                 >
                   {t.calculator.ctaButton}
                   <ArrowRight className="w-4 h-4" />
@@ -311,13 +311,13 @@ export default function StampDutyCalculator({ onEstimateBook }: StampDutyCalcula
             )}
 
             {/* Trust badge card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 text-left flex items-start space-x-3.5">
-              <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg shrink-0">
+            <div className="bg-slate-900 border border-slate-850 rounded-2xl p-5 text-left flex items-start space-x-3.5 shadow-sm">
+              <div className="p-2 bg-emerald-500/10 text-emerald-600 rounded-lg shrink-0">
                 <IndianRupee className="w-5 h-5" />
               </div>
               <div>
-                <h5 className="text-white font-bold text-xs uppercase tracking-wider font-mono">{t.calculator.escrowTitle}</h5>
-                <p className="text-xs text-slate-400 mt-1 leading-normal">
+                <h5 className="text-slate-700 font-bold text-xs uppercase tracking-wider font-mono">{t.calculator.escrowTitle}</h5>
+                <p className="text-xs text-slate-500 mt-1 leading-normal">
                   {t.calculator.escrowDesc}
                 </p>
               </div>

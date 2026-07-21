@@ -624,19 +624,19 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
   };
 
   return (
-    <section id="land-hub" className="py-24 bg-slate-900 border-t border-slate-950">
+    <section id="land-hub" className="py-24 bg-slate-900 border-t border-slate-850 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title Block */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-400 font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full text-xs font-semibold text-amber-500 font-mono uppercase tracking-wider">
             <Building2 className="w-3.5 h-3.5" />
             <span>{isKn ? 'ಆಸ್ತಿ ವಿನಿಮಯ' : 'Land Exchange Hub'}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-none uppercase">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-700 tracking-tight leading-none uppercase font-sans">
             {isKn ? 'ನಿಮ್ಮ ಜಮೀನು ಮಾರಾಟ ಮಾಡಿ ಅಥವಾ ಖರೀದಿಸಿ' : 'Register Land To Sell & Buy requests'}
           </h2>
-          <p className="text-base text-slate-400 leading-relaxed">
+          <p className="text-base text-slate-500 leading-relaxed font-sans">
             {isKn 
               ? 'ಬೆಂಗಳೂರಿನಲ್ಲಿ ನಿಮ್ಮ ನಿವೇಶನ ಅಥವಾ ಕೃಷಿ ಭೂಮಿಯನ್ನು ಸುಲಭವಾಗಿ ಮಾರಾಟ ಮಾಡಿ. ಖರೀದಿದಾರರು ತಮಗೆ ಬೇಕಾದ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ ನಮ್ಮ ಮಾರುಕಟ್ಟೆ ತಜ್ಞರ ಸಹಾಯ ಪಡೆಯಿರಿ.' 
               : 'Direct connection desk. Register your land to sell, or lodge land buying requirements. MMB Realtors collects, verifies, and matches prospective Bangalore sellers and buyers instantly.'}
@@ -644,68 +644,68 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
         </div>
 
         {/* Dynamic Tab Selector Card */}
-        <div className="bg-slate-950/60 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="bg-slate-950 border border-slate-850 rounded-3xl overflow-hidden shadow-sm">
           
           {/* Header Switcher Row */}
-          <div className="flex border-b border-slate-800 flex-col lg:flex-row bg-slate-950">
+          <div className="flex border-b border-slate-850 flex-row overflow-x-auto whitespace-nowrap bg-slate-950 lg:flex-row scrollbar-none">
             <button
               onClick={() => setActiveTab('browse')}
-              className={`flex-1 py-5 px-6 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2.5 ${
+              className={`flex-1 py-4 lg:py-5 px-5 lg:px-6 font-mono text-[11px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2 shrink-0 lg:shrink min-w-[145px] lg:min-w-0 ${
                 activeTab === 'browse' 
-                  ? 'border-amber-400 text-amber-400 bg-slate-900/40' 
-                  : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+                  ? 'border-amber-500 text-amber-500 bg-slate-900 font-black shadow-inner' 
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-900/30'
               }`}
             >
-              <Search className="w-4 h-4 shrink-0 text-amber-400" />
+              <Search className="w-3.5 lg:w-4 h-3.5 lg:h-4 shrink-0 text-amber-500" />
               <span>{isKn ? 'ಆಸ್ತಿಗಳ ಶೋಧನೆ' : 'Browse Listings'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab('sell')}
-              className={`flex-1 py-5 px-6 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2.5 ${
+              className={`flex-1 py-4 lg:py-5 px-5 lg:px-6 font-mono text-[11px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2 shrink-0 lg:shrink min-w-[170px] lg:min-w-0 ${
                 activeTab === 'sell' 
-                  ? 'border-amber-400 text-amber-400 bg-slate-900/40' 
-                  : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+                  ? 'border-amber-500 text-amber-500 bg-slate-900 font-black shadow-inner' 
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-900/30'
               }`}
             >
-              <TrendingUp className="w-4 h-4 shrink-0" />
+              <TrendingUp className="w-3.5 lg:w-4 h-3.5 lg:h-4 shrink-0" />
               <span>{isKn ? 'ಜಮೀನು ಮಾರಾಟ ಮಾಡಿ' : 'Register Land to Sell'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab('buy')}
-              className={`flex-1 py-5 px-6 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2.5 ${
+              className={`flex-1 py-4 lg:py-5 px-5 lg:px-6 font-mono text-[11px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2 shrink-0 lg:shrink min-w-[190px] lg:min-w-0 ${
                 activeTab === 'buy' 
-                  ? 'border-amber-400 text-amber-400 bg-slate-900/40' 
-                  : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+                  ? 'border-amber-500 text-amber-500 bg-slate-900 font-black shadow-inner' 
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-900/30'
               }`}
             >
-              <Layers className="w-4 h-4 shrink-0" />
-              <span>{isKn ? 'ಜಮೀನು ಖರೀದಿಸಿ' : 'Register Buy Requirements'}</span>
+              <Layers className="w-3.5 lg:w-4 h-3.5 lg:h-4 shrink-0" />
+              <span>{isKn ? 'ಜಮೀನು ಖರೀದಿಸಿ' : 'Register Buy'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab('matchups')}
-              className={`flex-1 py-5 px-6 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2.5 ${
+              className={`flex-1 py-4 lg:py-5 px-5 lg:px-6 font-mono text-[11px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2 shrink-0 lg:shrink min-w-[155px] lg:min-w-0 ${
                 activeTab === 'matchups' 
-                  ? 'border-amber-400 text-amber-400 bg-slate-900/40' 
-                  : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+                  ? 'border-amber-500 text-amber-500 bg-slate-900 font-black shadow-inner' 
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-900/30'
               }`}
             >
-              <Sparkles className="w-4 h-4 shrink-0 text-amber-400" />
+              <Sparkles className="w-3.5 lg:w-4 h-3.5 lg:h-4 shrink-0 text-amber-500" />
               <span>{isKn ? 'ಸ್ಮಾರ್ಟ್ ಮ್ಯಾಚ್‌ಅಪ್ಸ್' : 'Smart Matchups'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab('admin')}
-              className={`flex-1 py-5 px-6 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2.5 ${
+              className={`flex-1 py-4 lg:py-5 px-5 lg:px-6 font-mono text-[11px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider transition-all border-b-2 lg:border-b-0 cursor-pointer text-center flex items-center justify-center space-x-2 shrink-0 lg:shrink min-w-[135px] lg:min-w-0 ${
                 activeTab === 'admin' 
-                  ? 'border-amber-400 text-amber-400 bg-slate-900/40' 
-                  : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-900/10'
+                  ? 'border-amber-500 text-amber-500 bg-slate-900 font-black shadow-inner' 
+                  : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-900/30'
               }`}
             >
-              <Database className="w-4 h-4 shrink-0" />
-              <span>{isKn ? 'ಏಜೆನ್ಸಿ ಡೆಸ್ಕ್ (ಲಿಸ್ಟಿಂಗ್ಸ್)' : 'Agency Desk (Get Listings)'}</span>
+              <Database className="w-3.5 lg:w-4 h-3.5 lg:h-4 shrink-0" />
+              <span>{isKn ? 'ಏಜೆನ್ಸಿ ಡೆಸ್ಕ್' : 'Agency Desk'}</span>
             </button>
           </div>
 
@@ -729,34 +729,34 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
                         <span>{isKn ? 'ಸಂಪೂರ್ಣ ಪರಿಶೀಲಿಸಿದ ಪತ್ರಗಳು' : '100% Pre-Audit Verification'}</span>
                       </div>
-                      <h3 className="text-2xl font-black text-white uppercase tracking-wider font-mono">
+                      <h3 className="text-2xl font-black text-slate-700 uppercase tracking-wider font-mono">
                         {isKn ? '🔍 ಸಕ್ರಿಯ ಜಮೀನು ಆಸ್ತಿಗಳು' : '🔍 Active Land Listings'}
                       </h3>
-                      <p className="text-sm text-slate-300 max-w-2xl leading-relaxed mt-1">
+                      <p className="text-sm text-slate-500 max-w-2xl leading-relaxed mt-1">
                         {isKn 
                           ? 'ಬ್ರೋಕರ್ ಇಲ್ಲದ ನೇರ ಮಾಲೀಕರ ಜಮೀನುಗಳ ಪಟ್ಟಿ. ನಿಮ್ಮ ಬಜೆಟ್ ಹಾಗೂ ಸ್ಥಳಕ್ಕೆ ತಕ್ಕಂತೆ ಶೋಧಿಸಿ.'
                           : 'Explore directly registered seller assets with verified title deeds. Filter down to find your ideal investment in seconds.'}
                       </p>
                     </div>
-
+ 
                     <button
                       onClick={fetchAllDataPublic}
-                      className="px-5 py-3 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-xs font-bold text-white rounded-xl flex items-center justify-center space-x-2 shrink-0 cursor-pointer transition-colors"
+                      className="px-5 py-3 bg-slate-950 hover:bg-slate-850 border border-slate-850 text-xs font-bold text-slate-700 rounded-xl flex items-center justify-center space-x-2 shrink-0 cursor-pointer transition-colors shadow-sm"
                     >
-                      <span className="animate-spin text-amber-400 h-3.5 w-3.5 border-2 border-amber-400 border-t-transparent rounded-full" style={{ animationDuration: '1.5s', display: loadingList ? 'inline-block' : 'none' }}></span>
+                      <span className="animate-spin text-amber-500 h-3.5 w-3.5 border-2 border-amber-500 border-t-transparent rounded-full" style={{ animationDuration: '1.5s', display: loadingList ? 'inline-block' : 'none' }}></span>
                       {!loadingList && <span>🔄</span>}
                       <span>{isKn ? 'ತಾಜಾ ಮಾಹಿತಿ ತನ್ನಿ' : 'Reload Land Listings'}</span>
                     </button>
                   </div>
-
+ 
                   {/* VISUAL ACCESSIBLE SEARCH & FILTER INTERFACE */}
-                  <div className="bg-slate-950/80 border border-slate-850 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                  <div className="bg-slate-950 border border-slate-850 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
                       
                       {/* Search Keyword Filter */}
                       <div className="md:col-span-5 space-y-2">
-                        <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                          <Search className="w-3.5 h-3.5 text-amber-400" />
+                        <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                          <Search className="w-3.5 h-3.5 text-amber-500" />
                           <span>{isKn ? 'ಪ್ರದೇಶ ಅಥವಾ ವಿವರಗಳಿಂದ ಹುಡುಕಿ' : 'Search Locality / Keyword'}</span>
                         </label>
                         <div className="relative">
@@ -765,29 +765,29 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder={isKn ? 'ಉದಾ: Devanahalli, A Khata, Sy No...' : 'e.g. Devanahalli, Sarjapur, A Khata, Sy No...'}
                             value={browseSearch}
                             onChange={(e) => setBrowseSearch(e.target.value)}
-                            className="w-full pl-4 pr-10 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:outline-none focus:border-amber-400 transition-colors placeholder-slate-500"
+                            className="w-full pl-4 pr-10 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-xs sm:text-sm focus:outline-none focus:border-amber-500 transition-colors placeholder-slate-400"
                           />
                           {browseSearch && (
                             <button 
                               onClick={() => setBrowseSearch('')}
-                              className="absolute right-3.5 top-3.5 text-slate-500 hover:text-white text-xs cursor-pointer"
+                              className="absolute right-3.5 top-3.5 text-slate-500 hover:text-slate-700 text-xs cursor-pointer"
                             >
                               ✕
                             </button>
                           )}
                         </div>
                       </div>
-
+ 
                       {/* Locality Dropdown Filter */}
                       <div className="md:col-span-4 space-y-2">
-                        <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                        <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                          <MapPin className="w-3.5 h-3.5 text-amber-500" />
                           <span>{isKn ? 'ಬೆಂಗಳೂರು ನಿರ್ದಿಷ್ಟ ಬಡಾವಣೆ' : 'Select Bengaluru Locality'}</span>
                         </label>
                         <select
                           value={browseAreaFilter}
                           onChange={(e) => setBrowseAreaFilter(e.target.value)}
-                          className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-xs sm:text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                          className="w-full px-4 py-3 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-xs sm:text-sm focus:outline-none focus:border-amber-500 transition-colors"
                         >
                           <option value="All">{isKn ? 'ಎಲ್ಲಾ ಪ್ರದೇಶಗಳು (All Localities)' : 'All Areas (Any Locality)'}</option>
                           {bangaloreLocalities.map((loc, idx) => (
@@ -805,7 +805,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             setBrowseBudgetFilter('All');
                             setBrowseAreaFilter('All');
                           }}
-                          className="w-full py-3 border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 text-xs text-slate-400 hover:text-white font-mono font-bold uppercase tracking-wider rounded-xl cursor-pointer transition-colors"
+                          className="w-full py-3 border border-slate-850 hover:border-slate-800 hover:bg-slate-900 text-xs text-slate-500 hover:text-slate-700 font-mono font-bold uppercase tracking-wider rounded-xl cursor-pointer transition-colors shadow-sm"
                         >
                           🧹 {isKn ? 'ಶೋಧನೆ ರದ್ದುಮಾಡಿ' : 'Clear All Filters'}
                         </button>
@@ -815,7 +815,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                     {/* Property Type Grid Filter (Visual Chips) */}
                     <div className="space-y-3 pt-2">
-                      <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono block">
+                      <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono block">
                         🏢 {isKn ? 'ಜಮೀನಿನ ಪ್ರಕಾರ ಆರಿಸಿ:' : 'Filter by Land / Property Type:'}
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -834,8 +834,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               onClick={() => setBrowseTypeFilter(type.id)}
                               className={`px-3.5 py-2 rounded-xl text-xs font-bold font-mono transition-all flex items-center space-x-1.5 border cursor-pointer ${
                                 isActive 
-                                  ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-lg shadow-amber-400/10' 
-                                  : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700'
+                                  ? 'bg-amber-500 text-white border-amber-500 shadow-sm shadow-amber-500/10' 
+                                  : 'bg-slate-900 text-slate-500 border-slate-850 hover:text-slate-700 hover:border-slate-800'
                               }`}
                             >
                               <span>{type.emoji}</span>
@@ -848,7 +848,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                     {/* Budget Tier Grid Filter (Visual Segment) */}
                     <div className="space-y-3 pt-2">
-                      <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono block">
+                      <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono block">
                         💰 {isKn ? 'ಬಜೆಟ್ ವ್ಯಾಪ್ತಿ ಆಯ್ಕೆಮಾಡಿ:' : 'Filter by Budget Range:'}
                       </label>
                       <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
@@ -866,8 +866,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               onClick={() => setBrowseBudgetFilter(tier.id)}
                               className={`p-3.5 rounded-2xl text-left border cursor-pointer transition-all flex flex-col justify-between ${
                                 isActive 
-                                  ? 'bg-indigo-500/10 text-white border-indigo-500 shadow-md' 
-                                  : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700'
+                                  ? 'bg-amber-500/10 text-amber-600 border-amber-500 shadow-sm' 
+                                  : 'bg-slate-900 text-slate-500 border-slate-850 hover:text-slate-700 hover:border-slate-800'
                               }`}
                             >
                               <span className="text-xs font-black font-mono">{tier.label}</span>
@@ -887,12 +887,12 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       <span>{isKn ? 'ಫೈರ್‌ಸ್ಟೋರ್ ಡೇಟಾಬೇಸ್‌ನಿಂದ ಜಮೀನುಗಳನ್ನು ತರಲಾಗುತ್ತಿದೆ...' : 'Connecting to MMB live cloud database...'}</span>
                     </div>
                   ) : getFilteredBrowseSellers().length === 0 ? (
-                    <div className="text-center py-16 max-w-lg mx-auto bg-slate-950/30 border border-dashed border-slate-800 rounded-3xl p-8 space-y-4">
-                      <div className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-full flex items-center justify-center mx-auto text-slate-500">
+                    <div className="text-center py-16 max-w-lg mx-auto bg-slate-950 border border-dashed border-slate-850 rounded-3xl p-8 space-y-4 shadow-sm">
+                      <div className="w-12 h-12 bg-slate-900 border border-slate-850 rounded-full flex items-center justify-center mx-auto text-slate-500">
                         <AlertCircle className="w-5 h-5" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-white uppercase font-mono">
+                        <h4 className="text-sm font-bold text-slate-700 uppercase font-mono">
                           {isKn ? 'ಯಾವುದೇ ಜಮೀನು ಸಿಕ್ಕಿಲ್ಲ' : 'No Listings Found'}
                         </h4>
                         <p className="text-xs text-slate-500 leading-relaxed">
@@ -904,8 +904,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                     </div>
                   ) : (
                     <div>
-                      <div className="flex justify-between items-center mb-6 text-xs text-slate-400 font-mono">
-                        <span>{isKn ? 'ಒಟ್ಟು ಶೋಧನೆಯಾದ ಆಸ್ತಿಗಳು:' : 'Filtered Results Found:'} <strong className="text-amber-400">{getFilteredBrowseSellers().length}</strong></span>
+                      <div className="flex justify-between items-center mb-6 text-xs text-slate-500 font-mono">
+                        <span>{isKn ? 'ಒಟ್ಟು ಶೋಧನೆಯಾದ ಆಸ್ತಿಗಳು:' : 'Filtered Results Found:'} <strong className="text-amber-500">{getFilteredBrowseSellers().length}</strong></span>
                         <span>{isKn ? 'ದಾಖಲೆಗಳು: ಸುರಕ್ಷಿತ' : 'Safety Check: Guaranteed'}</span>
                       </div>
 
@@ -921,60 +921,60 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               initial={{ opacity: 0, y: 15 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: idx * 0.05 }}
-                              className="bg-slate-950/90 border border-slate-850 hover:border-slate-700 hover:shadow-xl rounded-2xl overflow-hidden transition-all flex flex-col justify-between"
+                              className="bg-slate-900 border border-slate-850 hover:border-amber-500 hover:shadow-md rounded-2xl overflow-hidden transition-all flex flex-col justify-between"
                             >
                               {/* Card Header */}
                               <div className="p-5 border-b border-slate-850 bg-slate-950 flex items-start justify-between">
                                 <div className="space-y-1">
-                                  <span className="px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase font-mono tracking-wider bg-amber-400/10 text-amber-400 border border-amber-400/20">
+                                  <span className="px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase font-mono tracking-wider bg-amber-500/10 text-amber-600 border border-amber-500/25">
                                     🏢 {item.landType || 'Residential Plot'}
                                   </span>
-                                  <h4 className="text-sm font-bold text-white tracking-tight flex items-center pt-1.5">
-                                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mr-1" />
+                                  <h4 className="text-sm font-bold text-slate-700 tracking-tight flex items-center pt-1.5">
+                                    <MapPin className="w-3.5 h-3.5 text-amber-500 shrink-0 mr-1" />
                                     <span className="truncate">{item.locality}</span>
                                   </h4>
                                 </div>
                                 <div className="text-right">
                                   <div className="text-xs text-slate-500 font-mono">Asking Price</div>
-                                  <div className="text-base font-black text-amber-400 font-mono tracking-tight">{formattedPrice}</div>
+                                  <div className="text-base font-black text-amber-600 font-mono tracking-tight">{formattedPrice}</div>
                                 </div>
                               </div>
 
                               {/* Card Body Specs Grid */}
                               <div className="p-5 space-y-4">
                                 <div className="grid grid-cols-2 gap-4">
-                                  <div className="p-2.5 bg-slate-900/50 border border-slate-850 rounded-xl space-y-0.5">
+                                  <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-xl space-y-0.5">
                                     <div className="text-[9px] text-slate-500 uppercase font-bold font-mono">📐 Land Size</div>
-                                    <div className="text-xs font-black text-white font-mono">{item.landSize?.toLocaleString()} Sq.Ft.</div>
+                                    <div className="text-xs font-black text-slate-700 font-mono">{item.landSize?.toLocaleString()} Sq.Ft.</div>
                                   </div>
 
-                                  <div className="p-2.5 bg-slate-900/50 border border-slate-850 rounded-xl space-y-0.5">
+                                  <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-xl space-y-0.5">
                                     <div className="text-[9px] text-slate-500 uppercase font-bold font-mono">🧭 Facing</div>
-                                    <div className="text-xs font-bold text-slate-300 font-mono">{item.facing || 'East'}</div>
+                                    <div className="text-xs font-bold text-slate-600 font-mono">{item.facing || 'East'}</div>
                                   </div>
 
-                                  <div className="p-2.5 bg-slate-900/50 border border-slate-850 rounded-xl space-y-0.5">
+                                  <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-xl space-y-0.5">
                                     <div className="text-[9px] text-slate-500 uppercase font-bold font-mono">📂 Khata Status</div>
-                                    <div className="text-xs font-bold text-slate-300 truncate" title={item.khataType}>{item.khataType || 'A Khata'}</div>
+                                    <div className="text-xs font-bold text-slate-600 truncate" title={item.khataType}>{item.khataType || 'A Khata'}</div>
                                   </div>
 
-                                  <div className="p-2.5 bg-slate-900/50 border border-slate-850 rounded-xl space-y-0.5">
+                                  <div className="p-2.5 bg-slate-950 border border-slate-850 rounded-xl space-y-0.5">
                                     <div className="text-[9px] text-slate-500 uppercase font-bold font-mono">🔢 Survey Number</div>
-                                    <div className="text-xs font-bold text-slate-300 font-mono truncate">{item.surveyNumber && item.surveyNumber !== 'Not Specified' ? item.surveyNumber : 'Verified'}</div>
+                                    <div className="text-xs font-bold text-slate-600 font-mono truncate">{item.surveyNumber && item.surveyNumber !== 'Not Specified' ? item.surveyNumber : 'Verified'}</div>
                                   </div>
                                 </div>
 
                                 {/* Custom notes preview */}
                                 {item.description && (
-                                  <p className="text-[11px] text-slate-400 leading-normal line-clamp-2 italic bg-slate-900/10 p-2 rounded-lg border border-slate-900">
+                                  <p className="text-[11px] text-slate-600 leading-normal line-clamp-2 italic bg-slate-950 p-2.5 rounded-xl border border-slate-850">
                                     " {item.description} "
                                   </p>
                                 )}
 
                                 {/* Legal verification status indicator */}
-                                <div className="flex items-center space-x-2 bg-emerald-500/5 border border-emerald-500/10 p-2 rounded-xl">
-                                  <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping shrink-0" />
-                                  <span className="text-[10px] text-emerald-400 font-mono font-bold uppercase tracking-wider flex items-center space-x-1.5">
+                                <div className="flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 p-2 rounded-xl">
+                                  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping shrink-0" />
+                                  <span className="text-[10px] text-emerald-600 font-mono font-bold uppercase tracking-wider flex items-center space-x-1.5">
                                     <span>🛡️ {isKn ? 'ದಾಖಲೆಗಳು ಪರಿಶೀಲಿಸಲ್ಪಟ್ಟಿವೆ' : 'MMB Legal Pre-Audited'}</span>
                                   </span>
                                 </div>
@@ -986,7 +986,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                                   href={getWhatsAppEnquiryLink(item)}
                                   target="_blank"
                                   rel="noreferrer"
-                                  className="w-full py-3 bg-amber-400 hover:bg-amber-500 text-slate-950 text-xs font-black font-mono uppercase tracking-wider rounded-xl flex items-center justify-center space-x-2 shadow-lg hover:shadow-amber-400/5 transition-all cursor-pointer"
+                                  className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white text-xs font-black font-mono uppercase tracking-wider rounded-xl flex items-center justify-center space-x-2 shadow-sm transition-all cursor-pointer"
                                 >
                                   <span>📞 {isKn ? 'ಪತ್ರ ಪರಿಶೀಲನೆ ಹಾಗೂ ಖರೀದಿಸಿ' : 'Verify & Purchase'}</span>
                                   <ArrowRight className="w-3.5 h-3.5" />
@@ -1016,8 +1016,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       {/* Left: Sell Form */}
                       <form onSubmit={handleSellSubmit} className="lg:col-span-7 space-y-6">
                       <div className="p-4 bg-amber-500/5 rounded-2xl border border-amber-500/15 flex items-start space-x-3">
-                        <Sparkles className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <Sparkles className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಜಮೀನಿನ ಎಲ್ಲಾ ನಿಖರ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ. ಇದು ಫೈರ್‌ಸ್ಟೋರ್ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಸುರಕ್ಷಿತವಾಗಿ ಸಂಗ್ರಹಿಸಲ್ಪಡುತ್ತದೆ ಮತ್ತು ನಾವು ತಕ್ಷಣ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.'
                             : 'Provide absolute legal boundaries, pricing, and document attributes. Form updates instantly sync to MMB verified cloud registers so our legal team can get, inspect, and map them.'}
@@ -1025,8 +1025,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       </div>
 
                       {sellError && (
-                        <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-2xl flex items-center space-x-2.5 text-rose-400 text-xs">
-                          <AlertCircle className="w-4 h-4 shrink-0" />
+                        <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-2xl flex items-center space-x-2.5 text-rose-600 text-xs font-sans">
+                          <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
                           <span>{sellError}</span>
                         </div>
                       )}
@@ -1035,8 +1035,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         
                         {/* Owner Name */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <User className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <User className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಮಾಲೀಕರ ಪೂರ್ಣ ಹೆಸರು' : 'Land Owner Name'} *</span>
                           </label>
                           <input
@@ -1045,14 +1045,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. Anand Kumar"
                             value={sellForm.ownerName}
                             onChange={(e) => setSellForm({ ...sellForm, ownerName: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Phone */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <Phone className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <Phone className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಸಂಪರ್ಕ ಸಂಖ್ಯೆ (ಮೊಬೈಲ್)' : 'Mobile Phone'} *</span>
                           </label>
                           <input
@@ -1062,13 +1062,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. 9845012345"
                             value={sellForm.phone}
                             onChange={(e) => setSellForm({ ...sellForm, phone: e.target.value.replace(/\D/g, '') })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Email */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <Mail className="w-3.5 h-3.5 text-slate-500" />
                             <span>{isKn ? 'ಇಮೇಲ್ ವಿಳಾಸ' : 'Email Address'} (Optional)</span>
                           </label>
@@ -1077,20 +1077,20 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. owner@example.com"
                             value={sellForm.email}
                             onChange={(e) => setSellForm({ ...sellForm, email: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Bangalore Locality */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <MapPin className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಆಸ್ತಿ ಇರುವ ಬೆಂಗಳೂರಿನ ಪ್ರದೇಶ' : 'Bangalore Locality'} *</span>
                           </label>
                           <select
                             value={sellForm.locality}
                             onChange={(e) => setSellForm({ ...sellForm, locality: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="">{isKn ? '-- ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ --' : '-- Select Locality --'}</option>
                             {(isKn ? bangaloreLocalitiesKn : bangaloreLocalities).map((loc, idx) => (
@@ -1101,8 +1101,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Land Size */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <Layers className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <Layers className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಜಮೀನಿನ ವಿಸ್ತೀರ್ಣ (ಚದರ ಅಡಿಗಳಲ್ಲಿ)' : 'Land Area (in Sq. Ft.)'} *</span>
                           </label>
                           <input
@@ -1111,19 +1111,19 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. 1200, 2400, 4000"
                             value={sellForm.landSize}
                             onChange={(e) => setSellForm({ ...sellForm, landSize: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Facing direction */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>🧭 {isKn ? 'ಮುಖ (ದಿಕ್ಕು)' : 'Plot Facing'}</span>
                           </label>
                           <select
                             value={sellForm.facing}
                             onChange={(e) => setSellForm({ ...sellForm, facing: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="East">East</option>
                             <option value="West">West</option>
@@ -1138,7 +1138,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Expected Price */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>💰 {isKn ? 'ಒಟ್ಟು ನಿರೀಕ್ಷಿತ ಬೆಲೆ (ರೂಪಾಯಿಗಳಲ್ಲಿ)' : 'Expected Price (Total INR)'} *</span>
                           </label>
                           <input
@@ -1147,10 +1147,10 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. 6000000 (for 60 Lakhs)"
                             value={sellForm.expectedPrice}
                             onChange={(e) => setSellForm({ ...sellForm, expectedPrice: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                           {sellForm.expectedPrice && (
-                            <p className="text-xs text-amber-400 font-mono font-bold">
+                            <p className="text-xs text-amber-600 font-mono font-bold">
                               Formatted: {formatPriceToINR(sellForm.expectedPrice)}
                             </p>
                           )}
@@ -1158,13 +1158,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Khata Type */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>📂 {isKn ? 'ಖಾತಾ ಪ್ರಕಾರ' : 'Khata Certification'} *</span>
                           </label>
                           <select
                             value={sellForm.khataType}
                             onChange={(e) => setSellForm({ ...sellForm, khataType: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="A Khata">A Khata (BBMP)</option>
                             <option value="B Khata">B Khata (BBMP / DC Converted)</option>
@@ -1177,13 +1177,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Land Type */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>🏢 {isKn ? 'ಜಮೀನಿನ ಪ್ರಕಾರ / ವಿಧ' : 'Type of Land'} *</span>
                           </label>
                           <select
                             value={sellForm.landType || 'Residential Plot'}
                             onChange={(e) => setSellForm({ ...sellForm, landType: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="Residential Plot">{isKn ? 'ವಸತಿ ನಿವೇಶನ (ಫ್ಲಾಟ್/ಲೇಔಟ್)' : 'Residential Plot (Flat/Layout)'}</option>
                             <option value="Apartment Land">{isKn ? 'ಅಪಾರ್ಟ್‌ಮೆಂಟ್/ಫ್ಲಾಟ್ ಜಮೀನು' : 'Apartment/Flat Development Land'}</option>
@@ -1195,7 +1195,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Survey Number */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>🔢 {isKn ? 'ಸರ್ವೇ ನಂಬರ್ (ಐಚ್ಛಿಕ)' : 'Survey Number / Sy No.'} (Optional)</span>
                           </label>
                           <input
@@ -1203,7 +1203,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. Sy No 14/2A"
                             value={sellForm.surveyNumber}
                             onChange={(e) => setSellForm({ ...sellForm, surveyNumber: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
@@ -1214,9 +1214,9 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             id="hasTitleDeed"
                             checked={sellForm.hasTitleDeed}
                             onChange={(e) => setSellForm({ ...sellForm, hasTitleDeed: e.target.checked })}
-                            className="w-4 h-4 rounded border-slate-800 bg-slate-900 text-amber-400 focus:ring-amber-500"
+                            className="w-4 h-4 rounded border-slate-850 bg-slate-900 text-amber-500 focus:ring-amber-500"
                           />
-                          <label htmlFor="hasTitleDeed" className="text-xs text-slate-300 font-medium cursor-pointer select-none">
+                          <label htmlFor="hasTitleDeed" className="text-xs text-slate-600 font-medium cursor-pointer select-none font-sans">
                             {isKn ? 'ನನ್ನ ಬಳಿ ತಾಯಿ ಪತ್ರ ಮತ್ತು ಅಸಲಿ ಕ್ರಯ ಪತ್ರಗಳಿವೆ.' : 'I have clear Title deeds, Mother deeds & up-to-date EC.'}
                           </label>
                         </div>
@@ -1225,7 +1225,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                       {/* Description Textarea */}
                       <div className="space-y-1.5">
-                        <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                        <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                           <span>📝 {isKn ? 'ಹೆಚ್ಚಿನ ವಿವರಗಳು / ಜಮೀನಿನ ಗಡಿಗಳು' : 'Additional Land Details / Boundary Specs'}</span>
                         </label>
                         <textarea
@@ -1233,7 +1233,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                           placeholder={isKn ? 'ಜಮೀನಿನ ಗಡಿಗಳು, ದಾರಿ, ಸಮೀಪದ ಗುರುತುಗಳು ಇತ್ಯಾದಿ...' : 'Specify boundaries (East-West layout), physical access roads, close landmarks, and any specific notes.'}
                           value={sellForm.description}
                           onChange={(e) => setSellForm({ ...sellForm, description: e.target.value })}
-                          className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"
+                          className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors resize-none"
                         ></textarea>
                       </div>
 
@@ -1241,7 +1241,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         <button
                           type="submit"
                           disabled={sellSubmitting}
-                          className="px-8 py-4 bg-amber-400 hover:bg-amber-500 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-black font-mono text-xs uppercase tracking-wider rounded-xl inline-flex items-center space-x-2 cursor-pointer shadow-lg shadow-amber-400/10"
+                          className="px-8 py-4 bg-amber-500 hover:bg-amber-600 disabled:bg-slate-900 disabled:text-slate-400 text-white font-black font-mono text-xs uppercase tracking-wider rounded-xl inline-flex items-center space-x-2 cursor-pointer shadow-sm transition-all"
                         >
                           {sellSubmitting ? (
                             <span>{isKn ? 'ಉಳಿತಾಯವಾಗುತ್ತಿದೆ...' : 'Saving Listing...'}</span>
@@ -1258,10 +1258,10 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                     {/* Right: Beautiful Photo and Animated Process Tracker */}
                     <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
-                      <div className="bg-slate-900/90 border border-slate-800/80 rounded-3xl p-6 shadow-xl space-y-6">
+                      <div className="bg-slate-900 border border-slate-850 rounded-3xl p-6 shadow-sm space-y-6">
                         
                         {/* Image Box */}
-                        <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-md group">
+                        <div className="relative rounded-2xl overflow-hidden border border-slate-850 shadow-sm group">
                           <img 
                             src={sellLandIllustration} 
                             alt="Bangalore prime residential plot" 
@@ -1269,7 +1269,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             referrerPolicy="no-referrer"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                          <div className="absolute top-3 left-3 bg-amber-500 text-slate-950 px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider font-mono shadow-md">
+                          <div className="absolute top-3 left-3 bg-amber-500 text-white px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider font-mono shadow-md">
                             {isKn ? 'ನೈಜ ಚಿತ್ರಣ' : 'PRIME PLOTS'}
                           </div>
                           <div className="absolute bottom-3 left-3">
@@ -1284,8 +1284,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Interactive Steps Animation */}
                         <div className="space-y-4">
-                          <h4 className="text-xs font-black uppercase font-mono text-slate-300 tracking-wider flex items-center gap-1.5 border-b border-slate-800/80 pb-3">
-                            <Sparkles className="w-4 h-4 text-amber-400" />
+                          <h4 className="text-xs font-black uppercase font-mono text-slate-700 tracking-wider flex items-center gap-1.5 border-b border-slate-850 pb-3">
+                            <Sparkles className="w-4 h-4 text-amber-500" />
                             <span>{isKn ? 'ನಮ್ಮ ನೋಂದಣಿ ಮತ್ತು ಪರಿಶೀಲನೆ ಪ್ರಕ್ರಿಯೆ' : 'How We Process Your Listing'}</span>
                           </h4>
 
@@ -1299,16 +1299,16 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.1 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-emerald-500/15 text-emerald-400 rounded-lg shrink-0 mt-0.5">
+                              <div className="p-1.5 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-lg shrink-0 mt-0.5">
                                 <Check className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-white uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-slate-700 uppercase tracking-wide">
                                   {isKn ? '೧. ದಾಖಲೆಗಳ ತಪಾಸಣೆ (EC & Deeds)' : '1. Title Deed Audit (30-Year Chain)'}
                                 </h5>
-                                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">
+                                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
                                   {isKn 
-                                    ? 'ನಮ್ಮ ಕಾನೂನು ತಜ್ಞರು ತಾಯಿ ಪತ್ರ ಮತ್ತು ಇತ್ತೀಚಿನ ಋಣಭಾರ ಪ್ರಮಾಣಪತ್ರವನ್ನು (EC) ಕೂಲಂಕಷವಾಗಿ ಪರಿಶೀಲಿಸುತ್ತಾರೆ.'
+                                    ? 'ನಮ್ಮ ಕಾನೂನು ತಜ್ಞರು ತಾಯಿ ಪತ್ರ ಮತ್ತು ಇತ್ತೀಚಿನ ಋಣಭಾರ ಪ್ರಮಾಣಪತ್ರವನ್ನು (EC) கூಲಂಕಷವಾಗಿ ಪರಿಶೀಲಿಸುತ್ತಾರೆ.'
                                     : 'Our panel lawyers audit parent deeds, Form 15 EC, and land conversion logs to assure clean titles.'}
                                 </p>
                               </div>
@@ -1322,14 +1322,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.3 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-emerald-500/15 text-emerald-400 rounded-lg shrink-0 mt-0.5">
-                                <Check className="w-3.5 h-3.5 animate-pulse" />
+                              <div className="p-1.5 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-lg shrink-0 mt-0.5">
+                                <Check className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-white uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-slate-700 uppercase tracking-wide">
                                   {isKn ? '೨. ಖಾತಾ ದೃಢೀಕರಣ (A-Khata Check)' : '2. Khata Authenticity Check'}
                                 </h5>
-                                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">
+                                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
                                   {isKn 
                                     ? 'ಬಿಬಿಎಂಪಿ ಎ-ಖಾತಾ, ಇ-ಖಾತಾ ಅಥವಾ ಕಂದಾಯ ದಾಖಲೆಗಳ ನೈಜತೆಯನ್ನು ಆಯಾ ಕಚೇರಿಗಳಲ್ಲಿ ದೃಢೀಕರಿಸಲಾಗುತ್ತದೆ.'
                                     : 'Verify BBMP/BMRDA Khata logs and DC conversion orders for financial clearance.'}
@@ -1345,14 +1345,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.5 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-amber-500/15 text-amber-400 rounded-lg shrink-0 mt-0.5">
+                              <div className="p-1.5 bg-amber-500/10 text-amber-600 border border-amber-500/20 rounded-lg shrink-0 mt-0.5">
                                 <Clock className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-amber-400 uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-amber-600 uppercase tracking-wide">
                                   {isKn ? '೩. ಗಡಿ ಗುರುತು ಮತ್ತು ಸ್ಥಳ ಪರಿಶೀಲನೆ' : '3. On-Site Physical Survey'}
                                 </h5>
-                                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">
+                                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
                                   {isKn 
                                     ? 'ನಮ್ಮ ಪ್ರತಿನಿಧಿಗಳು ಸ್ಥಳಕ್ಕೆ ಭೇಟಿ ನೀಡಿ ನಿಖರ ಗಡಿಗಳನ್ನು ಗುರುತಿಸಿ ರಸ್ತೆ ಸಂಪರ್ಕಗಳನ್ನು ಪರಿಶೀಲಿಸುತ್ತಾರೆ.'
                                     : 'Verify physical measurements, coordinates, access roads, and layout status.'}
@@ -1368,11 +1368,11 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.7 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-slate-800 text-slate-400 rounded-lg shrink-0 mt-0.5">
+                              <div className="p-1.5 bg-slate-950 border border-slate-850 text-slate-500 rounded-lg shrink-0 mt-0.5">
                                 <ArrowUpRight className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-slate-300 uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-slate-700 uppercase tracking-wide">
                                   {isKn ? '೪. ಸಕ್ರಿಯ ಖರೀದಿದಾರರ ನಕ್ಷೆ' : '4. Prospective Buyer Mapping'}
                                 </h5>
                                 <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
@@ -1392,18 +1392,18 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                   </div>
                   ) : (
                     <div className="text-center py-12 max-w-lg mx-auto space-y-6">
-                      <div className="w-16 h-16 bg-emerald-500/15 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
+                      <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto text-emerald-600">
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
                       
                       <div className="space-y-2.5">
-                        <h4 className="text-xl font-bold text-white">
+                        <h4 className="text-xl font-bold text-slate-700">
                           {isKn ? 'ಜಮೀನು ಯಶಸ್ವಿಯಾಗಿ ನೋಂದಾಯಿಸಲ್ಪಟ್ಟಿದೆ!' : 'Land Registered Successfully!'}
                         </h4>
-                        <p className="text-xs text-slate-400">
-                          ID: <span className="font-mono text-amber-400 font-black">{sellRefId}</span>
+                        <p className="text-xs text-slate-500">
+                          ID: <span className="font-mono text-amber-600 font-black">{sellRefId}</span>
                         </p>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ನಿಮ್ಮ ಜಮೀನಿನ ವಿವರಗಳು ನಮ್ಮ ಸುರಕ್ಷಿತ ಫೈರ್‌ಸ್ಟೋರ್ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಸೇರ್ಪಡೆಯಾಗಿವೆ. ಇದನ್ನು ನಮ್ಮ ಕಾನೂನು ಅಧಿಕಾರಿಗಳು ಈಗಲೇ ಪರಿಶೀಲಿಸಬಹುದು.'
                             : 'All legal specs have been written directly to our live database registers. To initiate instant buyer mapping, tap the dispatch button to alert our advisory desk on WhatsApp.'}
@@ -1413,7 +1413,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                         <button
                           onClick={resetSellForm}
-                          className="px-6 py-3 border border-slate-800 hover:border-slate-700 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider rounded-xl cursor-pointer"
+                          className="px-6 py-3 border border-slate-850 hover:border-slate-800 hover:bg-slate-900 text-slate-600 font-mono text-xs uppercase tracking-wider rounded-xl cursor-pointer transition-colors"
                         >
                           {isKn ? 'ಮತ್ತೊಂದು ನೋಂದಣಿ' : 'Register Another'}
                         </button>
@@ -1448,8 +1448,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       {/* Left: Buy Form */}
                       <form onSubmit={handleBuySubmit} className="lg:col-span-7 space-y-6">
                       <div className="p-4 bg-amber-500/5 rounded-2xl border border-amber-500/15 flex items-start space-x-3">
-                        <Sparkles className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <Sparkles className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ಬೆಂಗಳೂರಿನಲ್ಲಿ ನಿವೇಶನ ಅಥವಾ ಜಮೀನು ಕೊಳ್ಳಲು ನಿಮ್ಮ ಅಗತ್ಯತೆಗಳನ್ನು ನೋಂದಾಯಿಸಿ. ನಾವು ನಮ್ಮ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿರುವ ಸರಿಯಾದ ಆಸ್ತಿಗಳನ್ನು ಮ್ಯಾಪ್ ಮಾಡುತ್ತೇವೆ.'
                             : 'Submit details of the plot or agricultural acreage you wish to acquire. MMB will verify corresponding layouts and alert matching sellers automatically.'}
@@ -1457,8 +1457,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       </div>
 
                       {buyError && (
-                        <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-2xl flex items-center space-x-2.5 text-rose-400 text-xs">
-                          <AlertCircle className="w-4 h-4 shrink-0" />
+                        <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-2xl flex items-center space-x-2.5 text-rose-600 text-xs font-sans">
+                          <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
                           <span>{buyError}</span>
                         </div>
                       )}
@@ -1467,8 +1467,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         
                         {/* Buyer Name */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <User className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <User className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಖರೀದಿದಾರರ ಪೂರ್ಣ ಹೆಸರು' : 'Buyer Name'} *</span>
                           </label>
                           <input
@@ -1477,14 +1477,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. Ramesh Prasad"
                             value={buyForm.buyerName}
                             onChange={(e) => setBuyForm({ ...buyForm, buyerName: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Phone */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <Phone className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <Phone className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ' : 'Mobile Phone'} *</span>
                           </label>
                           <input
@@ -1494,13 +1494,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. 9163663109"
                             value={buyForm.phone}
                             onChange={(e) => setBuyForm({ ...buyForm, phone: e.target.value.replace(/\D/g, '') })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Email */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <Mail className="w-3.5 h-3.5 text-slate-500" />
                             <span>{isKn ? 'ಇಮೇಲ್ ವಿಳಾಸ' : 'Email Address'} (Optional)</span>
                           </label>
@@ -1509,14 +1509,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. buyer@example.com"
                             value={buyForm.email}
                             onChange={(e) => setBuyForm({ ...buyForm, email: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Desired Localities */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <MapPin className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಬಯಸುವ ಪ್ರದೇಶಗಳು (ಬೆಂಗಳೂರು)' : 'Desired Bangalore Localities'} *</span>
                           </label>
                           <input
@@ -1525,14 +1525,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. Devanahalli, Yelahanka, Whitefield"
                             value={buyForm.preferredLocalities}
                             onChange={(e) => setBuyForm({ ...buyForm, preferredLocalities: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Min Size Required */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
-                            <Layers className="w-3.5 h-3.5 text-amber-400" />
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
+                            <Layers className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಕನಿಷ್ಠ ಅಳತೆ ಬೇಕು (ಚದರ ಅಡಿಗಳಲ್ಲಿ)' : 'Min Size Required (in Sq. Ft.)'} *</span>
                           </label>
                           <input
@@ -1541,13 +1541,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. 1200, 2400"
                             value={buyForm.minSize}
                             onChange={(e) => setBuyForm({ ...buyForm, minSize: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                         </div>
 
                         {/* Max Budget */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>💰 {isKn ? 'ಗರಿಷ್ಠ ಬಜೆಟ್ (ರೂಪಾಯಿಗಳಲ್ಲಿ)' : 'Max Budget (Total INR)'} *</span>
                           </label>
                           <input
@@ -1556,10 +1556,10 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder="e.g. 15000000 (for 1.5 Crores)"
                             value={buyForm.maxBudget}
                             onChange={(e) => setBuyForm({ ...buyForm, maxBudget: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           />
                           {buyForm.maxBudget && (
-                            <p className="text-xs text-amber-400 font-mono font-bold">
+                            <p className="text-xs text-amber-600 font-mono font-bold">
                               Formatted: {formatPriceToINR(buyForm.maxBudget)}
                             </p>
                           )}
@@ -1567,13 +1567,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Preferred Khata Type */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>📂 {isKn ? 'ಆದ್ಯತೆಯ ಖಾತಾ ವಿಧ' : 'Preferred Khata Type'}</span>
                           </label>
                           <select
                             value={buyForm.preferredKhata}
                             onChange={(e) => setBuyForm({ ...buyForm, preferredKhata: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="A Khata Only">A Khata Only (BBMP / BDA)</option>
                             <option value="A or B Khata">Any BBMP Khata (A or B)</option>
@@ -1585,13 +1585,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Land Type */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>🏢 {isKn ? 'ಆದ್ಯತೆಯ ಜಮೀನಿನ ಪ್ರಕಾರ' : 'Preferred Land Type'} *</span>
                           </label>
                           <select
                             value={buyForm.landType || 'Residential Plot'}
                             onChange={(e) => setBuyForm({ ...buyForm, landType: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="Residential Plot">{isKn ? 'ವಸತಿ ನಿವೇಶನ (ಫ್ಲಾಟ್/ಲೇಔಟ್)' : 'Residential Plot (Flat/Layout)'}</option>
                             <option value="Apartment Land">{isKn ? 'ಅಪಾರ್ಟ್‌ಮೆಂಟ್/ಫ್ಲಾಟ್ ಜಮೀನು' : 'Apartment/Flat Development Land'}</option>
@@ -1603,13 +1603,13 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Purpose */}
                         <div className="space-y-1.5">
-                          <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                          <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                             <span>🎯 {isKn ? 'ಖರೀದಿಯ ಉದ್ದೇಶ' : 'Purchase Purpose'}</span>
                           </label>
                           <select
                             value={buyForm.purpose}
                             onChange={(e) => setBuyForm({ ...buyForm, purpose: e.target.value })}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors"
                           >
                             <option value="Residential Construction">Residential House Construction</option>
                             <option value="Commercial Development">Commercial Offices / Showrooms</option>
@@ -1623,7 +1623,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                       {/* Additional info */}
                       <div className="space-y-1.5">
-                        <label className="text-[11px] font-black uppercase text-slate-400 tracking-wider font-mono flex items-center space-x-1.5">
+                        <label className="text-[11px] font-black uppercase text-slate-500 tracking-wider font-mono flex items-center space-x-1.5">
                           <span>📝 {isKn ? 'ಯಾವುದೇ ಹೆಚ್ಚುವರಿ ಬೇಡಿಕೆಗಳು' : 'Any Specific Requirements / Amenities Needed'}</span>
                         </label>
                         <textarea
@@ -1631,7 +1631,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                           placeholder={isKn ? 'ರಸ್ತೆ ಅಗಲ, ಗೇಟೆಡ್ ಕಮ್ಯುನಿಟಿ, ಅಥವಾ ಇನ್ಯಾವುದೇ ಆದ್ಯತೆಗಳು...' : 'e.g. Gated community layout, 40-ft wide approach road, nearby metro, east-facing priority, immediate registry.'}
                           value={buyForm.additionalInfo}
                           onChange={(e) => setBuyForm({ ...buyForm, additionalInfo: e.target.value })}
-                          className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition-colors resize-none"
+                          className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-850 rounded-xl text-slate-700 text-sm focus:outline-none focus:border-amber-500 transition-colors resize-none"
                         ></textarea>
                       </div>
 
@@ -1639,7 +1639,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         <button
                           type="submit"
                           disabled={buySubmitting}
-                          className="px-8 py-4 bg-amber-400 hover:bg-amber-500 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-black font-mono text-xs uppercase tracking-wider rounded-xl inline-flex items-center space-x-2 cursor-pointer shadow-lg shadow-amber-400/10"
+                          className="px-8 py-4 bg-amber-500 hover:bg-amber-600 disabled:bg-slate-900 disabled:text-slate-400 text-white font-black font-mono text-xs uppercase tracking-wider rounded-xl inline-flex items-center space-x-2 cursor-pointer shadow-sm transition-all"
                         >
                           {buySubmitting ? (
                             <span>{isKn ? 'ನೋಂದಾಯಿಸಲಾಗುತ್ತಿದೆ...' : 'Registering...'}</span>
@@ -1656,10 +1656,10 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                     {/* Right: Beautiful Photo and Animated Process Tracker */}
                     <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
-                      <div className="bg-slate-900/90 border border-slate-800/80 rounded-3xl p-6 shadow-xl space-y-6">
+                      <div className="bg-slate-900 border border-slate-850 rounded-3xl p-6 shadow-sm space-y-6">
                         
                         {/* Image Box */}
-                        <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-md group">
+                        <div className="relative rounded-2xl overflow-hidden border border-slate-850 shadow-sm group">
                           <img 
                             src={buyLandIllustration} 
                             alt="Bangalore site plan blueprint" 
@@ -1667,7 +1667,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             referrerPolicy="no-referrer"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                          <div className="absolute top-3 left-3 bg-amber-500 text-slate-950 px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider font-mono shadow-md">
+                          <div className="absolute top-3 left-3 bg-amber-500 text-white px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider font-mono shadow-md">
                             {isKn ? 'ಬೇಡಿಕೆ ಪರಿಶೀಲನೆ' : 'MAPPING SYSTEM'}
                           </div>
                           <div className="absolute bottom-3 left-3">
@@ -1682,8 +1682,8 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                         {/* Interactive Steps Animation */}
                         <div className="space-y-4">
-                          <h4 className="text-xs font-black uppercase font-mono text-slate-300 tracking-wider flex items-center gap-1.5 border-b border-slate-800/80 pb-3">
-                            <Sparkles className="w-4 h-4 text-amber-400" />
+                          <h4 className="text-xs font-black uppercase font-mono text-slate-700 tracking-wider flex items-center gap-1.5 border-b border-slate-850 pb-3">
+                            <Sparkles className="w-4 h-4 text-amber-500" />
                             <span>{isKn ? 'ಖರೀದಿದಾರರಿಗೆ ನಮ್ಮ ವಿಶೇಷ ಸೇವೆ' : 'How We Fulfill Your Demands'}</span>
                           </h4>
 
@@ -1697,14 +1697,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.1 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-emerald-500/15 text-emerald-400 rounded-lg shrink-0 mt-0.5">
+                              <div className="p-1.5 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-lg shrink-0 mt-0.5">
                                 <Check className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-white uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-slate-700 uppercase tracking-wide">
                                   {isKn ? '೧. ಬೇಡಿಕೆ ಆಧಾರಿತ ಪ್ರದೇಶ ಶೋಧನೆ' : '1. Locality Vetting & Sourcing'}
                                 </h5>
-                                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">
+                                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
                                   {isKn 
                                     ? 'ನೀವು ಬಯಸುವ ಪ್ರದೇಶಗಳ ಎಲ್ಲಾ ಕ್ರಿಯಾಶೀಲ ಜಮೀನು ಮಾಲೀಕರ ವಿವರಗಳನ್ನು ನಮ್ಮ ಫೈರ್‌ಸ್ಟೋರ್ ರಿಜಿಸ್ಟರ್‌ನಲ್ಲಿ ಶೋಧಿಸಲಾಗುತ್ತದೆ.'
                                     : 'Cross-reference your preferred localities with our database of pre-verified landowners.'}
@@ -1720,14 +1720,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.3 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-emerald-500/15 text-emerald-400 rounded-lg shrink-0 mt-0.5">
-                                <Check className="w-3.5 h-3.5 animate-pulse" />
+                              <div className="p-1.5 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-lg shrink-0 mt-0.5">
+                                <Check className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-white uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-slate-700 uppercase tracking-wide">
                                   {isKn ? '೨. ಖಾತಾ ಪ್ರಕಾರದ ದೃಢೀಕರಣ' : '2. Preferred Khata Inspection'}
                                 </h5>
-                                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">
+                                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
                                   {isKn 
                                     ? 'ಎ-ಖಾತಾ ಅಥವಾ ಡಿ.ಸಿ. ಪರಿವರ್ತನೆ ವಿವರಗಳನ್ನು ಮೊದಲೇ ಪರಿಶೀಲಿಸಿ ನಿಮಗೆ ಸುರಕ್ಷಿತ ಆಸ್ತಿಗಳನ್ನು ಮಾತ್ರ ತೋರಿಸುತ್ತೇವೆ.'
                                     : 'Ensure BBMP A-Khata, Panchayat E-Khata, or DC conversions meet strict compliance requirements.'}
@@ -1743,14 +1743,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.5 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-amber-500/15 text-amber-400 rounded-lg shrink-0 mt-0.5">
+                              <div className="p-1.5 bg-amber-500/10 text-amber-600 border border-amber-500/20 rounded-lg shrink-0 mt-0.5">
                                 <Clock className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-amber-400 uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-amber-600 uppercase tracking-wide">
                                   {isKn ? '೩. ಶೀರ್ಷಿಕೆ ಮತ್ತು ಕರಡು ಕಾಯ್ದೆ ಪರಿಶೀಲನೆ' : '3. Deep Title & EC Due Diligence'}
                                 </h5>
-                                <p className="text-[11px] text-slate-400 leading-normal mt-0.5">
+                                <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
                                   {isKn 
                                     ? 'ಯಾವುದೇ ಕೋರ್ಟ್ ವ್ಯಾಜ್ಯ ಅಥವಾ ಸಾಲಗಳಿಲ್ಲದಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ೩೦ ವರ್ಷದ ಲಿಂಕ್ ದಸ್ತಾವೇಜುಗಳನ್ನು ಪರೀಕ್ಷಿಸುತ್ತೇವೆ.'
                                     : 'Perform rigorous title checks, encumbrance tracing, and layout sanity audits before showing the plot.'}
@@ -1766,11 +1766,11 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                               transition={{ delay: 0.7 }}
                               className="flex items-start space-x-3 text-left"
                             >
-                              <div className="p-1.5 bg-slate-800 text-slate-400 rounded-lg shrink-0 mt-0.5">
+                              <div className="p-1.5 bg-slate-950 border border-slate-850 text-slate-500 rounded-lg shrink-0 mt-0.5">
                                 <ArrowUpRight className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <h5 className="text-xs font-bold text-slate-300 uppercase tracking-wide">
+                                <h5 className="text-xs font-bold text-slate-700 uppercase tracking-wide">
                                   {isKn ? '೪. ನೇರ ಸಂವಹನ ಮತ್ತು ಖರೀದಿ ಮಾತುಕತೆ' : '4. Zero-Brokerage Matching'}
                                 </h5>
                                 <p className="text-[11px] text-slate-500 leading-normal mt-0.5">
@@ -1790,18 +1790,18 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                   </div>
                   ) : (
                     <div className="text-center py-12 max-w-lg mx-auto space-y-6">
-                      <div className="w-16 h-16 bg-emerald-500/15 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
+                      <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto text-emerald-600">
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
                       
                       <div className="space-y-2.5">
-                        <h4 className="text-xl font-bold text-white">
+                        <h4 className="text-xl font-bold text-slate-700">
                           {isKn ? 'ಖರೀದಿ ಬೇಡಿಕೆ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಕೆಯಾಗಿದೆ!' : 'Buy Requirements Logged!'}
                         </h4>
-                        <p className="text-xs text-slate-400">
-                          ID: <span className="font-mono text-amber-400 font-black">{buyRefId}</span>
+                        <p className="text-xs text-slate-500">
+                          ID: <span className="font-mono text-amber-600 font-black">{buyRefId}</span>
                         </p>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ನಿಮ್ಮ ಆಸ್ತಿ ಬೇಡಿಕೆಯನ್ನು ನಾವು ಫೈರ್‌ಸ್ಟೋರ್ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ನೋಂದಾಯಿಸಿಕೊಂಡಿದ್ದೇವೆ. ನಮ್ಮ ತಜ್ಞರು ಶೀಘ್ರದಲ್ಲೇ ನಿಮಗೆ ತಕ್ಕ ಆಸ್ತಿಯನ್ನು ಹುಡುಕುತ್ತಾರೆ.'
                             : 'Your purchasing criteria are securely logged in our system. You can optionally alert our advisors on WhatsApp to review and matching plots in our catalog.'}
@@ -1811,7 +1811,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                         <button
                           onClick={resetBuyForm}
-                          className="px-6 py-3 border border-slate-800 hover:border-slate-700 hover:bg-slate-900 text-slate-300 font-mono text-xs uppercase tracking-wider rounded-xl cursor-pointer"
+                          className="px-6 py-3 border border-slate-850 hover:border-slate-800 hover:bg-slate-900 text-slate-600 font-mono text-xs uppercase tracking-wider rounded-xl cursor-pointer transition-colors"
                         >
                           {isKn ? 'ಮತ್ತೊಂದು ಬೇಡಿಕೆ ಸಲ್ಲಿಸಿ' : 'Post Another'}
                         </button>
@@ -1842,17 +1842,17 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                   className="space-y-8"
                 >
                   {/* Visual Friendly Header */}
-                  <div className="border-b border-slate-800 pb-6">
+                  <div className="border-b border-slate-850 pb-6">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
-                        <div className="inline-flex items-center space-x-1.5 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-bold text-emerald-400 mb-3">
-                          <Sparkles className="w-3.5 h-3.5 animate-pulse text-amber-400" />
+                        <div className="inline-flex items-center space-x-1.5 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-bold text-emerald-600 mb-3">
+                          <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                           <span>{isKn ? 'ಸ್ವಯಂಚಾಲಿತ ಸುಲಭ ಒಪ್ಪಂದಗಳು' : 'Direct & Spam-Free'}</span>
                         </div>
-                        <h3 className="text-2xl font-black text-white uppercase tracking-wider font-mono">
+                        <h3 className="text-2xl font-black text-slate-700 uppercase tracking-wider font-mono">
                           {isKn ? '🤝 ಜಮೀನು ಜೋಡಣೆ ಮಾರುಕಟ್ಟೆ' : '🤝 Direct Land Matchmaker'}
                         </h3>
-                        <p className="text-sm text-slate-300 max-w-2xl leading-relaxed mt-1">
+                        <p className="text-sm text-slate-500 max-w-2xl leading-relaxed mt-1 font-sans">
                           {isKn 
                             ? 'ಜಮೀನು ಮಾರಾಟಗಾರರು ಮತ್ತು ನೇರ ಖರೀದಿದಾರರನ್ನು ನಾವು ಪಾರದರ್ಶಕವಾಗಿ ಜೋಡಿಸುತ್ತೇವೆ. ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಸುರಕ್ಷಿತವಾಗಿದ್ದು, ಯಾವುದೇ ಅನಗತ್ಯ ಬ್ರೋಕರ್ ಕಾಲ್ಸ್ ಬರುವುದಿಲ್ಲ!'
                             : 'We instantly connect property owners with direct buyers. Your phone number is kept absolutely safe to protect you from unwanted agent spam!'
@@ -1862,9 +1862,9 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                       <button
                         onClick={fetchAllDataPublic}
-                        className="px-5 py-3 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-xs font-bold text-white rounded-xl flex items-center justify-center space-x-2 shrink-0 cursor-pointer transition-colors"
+                        className="px-5 py-3 bg-white hover:bg-[#FAF8F5] border border-slate-850 text-xs font-bold text-slate-600 rounded-xl flex items-center justify-center space-x-2 shrink-0 cursor-pointer transition-colors"
                       >
-                        <span className="animate-spin text-amber-400 h-3.5 w-3.5 border-2 border-amber-400 border-t-transparent rounded-full" style={{ animationDuration: '1.5s', display: loadingList ? 'inline-block' : 'none' }}></span>
+                        <span className="animate-spin text-amber-500 h-3.5 w-3.5 border-2 border-amber-500 border-t-transparent rounded-full" style={{ animationDuration: '1.5s', display: loadingList ? 'inline-block' : 'none' }}></span>
                         {!loadingList && <span>🔄</span>}
                         <span>{isKn ? 'ಸಂಪರ್ಕಗಳನ್ನು ಮರುಪರಿಶೀಲಿಸಿ' : 'Refresh Matching List'}</span>
                       </button>
@@ -1872,21 +1872,21 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                   </div>
 
                   {/* HOW IT WORKS FOR NORMAL PEOPLE CARD SECTION */}
-                  <div className="bg-slate-950 border border-slate-850 rounded-3xl p-6 sm:p-8">
-                    <h4 className="text-sm font-bold text-slate-300 uppercase tracking-widest font-mono mb-6 text-center">
+                  <div className="bg-white border border-slate-850 rounded-3xl p-6 sm:p-8 shadow-sm">
+                    <h4 className="text-sm font-bold text-slate-700 uppercase tracking-widest font-mono mb-6 text-center">
                       ✨ {isKn ? 'ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ?' : 'How does this help you?'}
                     </h4>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {/* Step 1 */}
-                      <div className="p-5 bg-slate-900/40 rounded-2xl border border-slate-850 space-y-3">
-                        <div className="w-10 h-10 bg-amber-400/10 rounded-xl flex items-center justify-center text-amber-400 font-bold text-lg">
+                      <div className="p-5 bg-slate-900 rounded-2xl border border-slate-850 space-y-3">
+                        <div className="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 border border-amber-500/20 font-bold text-lg font-mono">
                           1
                         </div>
-                        <div className="font-bold text-white text-sm">
+                        <div className="font-bold text-slate-700 text-sm">
                           {isKn ? 'ನಿಮ್ಮ ವಿವರ ಸಲ್ಲಿಸಿ' : '1. Post Your Need'}
                         </div>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ನಿಮ್ಮ ಜಮೀನು ಮಾರಲು "ಜಮೀನು ಮಾರಾಟ ಮಾಡಿ" ಫಾರ್ಮ್ ತುಂಬಿ, ಅಥವಾ ಖರೀದಿಸಲು "ಜಮೀನು ಖರೀದಿಸಿ" ಫಾರ್ಮ್ ತುಂಬಿ.'
                             : 'Simply register under "Register Land to Sell" or "Register Buy Requirements" with your budget and area.'
@@ -1895,30 +1895,30 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       </div>
 
                       {/* Step 2 */}
-                      <div className="p-5 bg-slate-900/40 rounded-2xl border border-slate-850 space-y-3">
-                        <div className="w-10 h-10 bg-amber-400/10 rounded-xl flex items-center justify-center text-amber-400 font-bold text-lg">
+                      <div className="p-5 bg-slate-900 rounded-2xl border border-slate-850 space-y-3">
+                        <div className="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-600 border border-amber-500/20 font-bold text-lg font-mono">
                           2
                         </div>
-                        <div className="font-bold text-white text-sm">
+                        <div className="font-bold text-slate-700 text-sm">
                           {isKn ? 'ಸ್ವಯಂಚಾಲಿತ ಜೋಡಣೆ' : '2. Instant Matching'}
                         </div>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
-                            ? 'ನಮ್ಮ ಸಿಸ್ಟಮ್ ನಿಮ್ಮ ಏರಿಯಾ, ಬಜೆಟ್ ಮತ್ತು ಜಮೀನಿನ ಪ್ರಕಾರಕ್ಕೆ ತಕ್ಕಂತೆ ಸರಿಯಾದ ಜೋಡಣೆಯನ್ನು ತಕ್ಷಣ ಹುಡುಕುತ್ತದೆ.'
+                            ? 'ನಮ್ಮ ಸಿಸ್ಟಮ್ ನಿಮ್ಮ ಏರಿಯಾ, ಬಜೆಟ್ ಮತ್ತು ಜಮೀನಿನ ಪ್ರಕಾರಕ್ಕೆ تಕ್ಕಂತೆ ಸರಿಯಾದ ಜೋಡಣೆಯನ್ನು ತಕ್ಷಣ ಹುಡುಕುತ್ತದೆ.'
                             : 'We instantly pair sellers and buyers who are looking in the same area for a similar price range.'
                           }
                         </p>
                       </div>
 
                       {/* Step 3 */}
-                      <div className="p-5 bg-slate-900/40 rounded-2xl border border-slate-850 space-y-3">
-                        <div className="w-10 h-10 bg-emerald-400/10 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg">
+                      <div className="p-5 bg-slate-900 rounded-2xl border border-slate-850 space-y-3">
+                        <div className="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-600 border border-emerald-500/20 font-bold text-lg font-mono">
                           3
                         </div>
-                        <div className="font-bold text-white text-sm">
+                        <div className="font-bold text-slate-700 text-sm">
                           {isKn ? 'ಯಾವುದೇ ಬ್ರೋಕರ್ ಹಾವಳಿ ಇಲ್ಲ' : '3. Zero Spam Guarantee'}
                         </div>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ನಿಮ್ಮ ನಂಬರ್ ಯಾರಿಗೂ ತಿಳಿಯುವುದಿಲ್ಲ. MMB ರಿಯಾಲ್ಟರ್ಸ್ ನುರಿತ ತಜ್ಞರು ನಿಮ್ಮ ದಾಖಲೆ ಪರಿಶೀಲಿಸಿ ಸುರಕ್ಷಿತವಾಗಿ ಜೋಡಣೆ ಮಾಡುತ್ತಾರೆ!'
                             : 'No agent calls or spam! We hide your contact info, verify title deeds, and introduce you only when it is a safe, perfect match.'
@@ -1930,39 +1930,39 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                   {/* Simple Stats Counter */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="p-5 bg-slate-950/80 border border-slate-850 rounded-2xl flex items-center space-x-4">
-                      <div className="p-3 bg-amber-400/10 text-amber-400 rounded-xl">
+                    <div className="p-5 bg-white border border-slate-850 rounded-2xl flex items-center space-x-4 shadow-sm">
+                      <div className="p-3 bg-amber-500/10 text-amber-600 border border-amber-500/20 rounded-xl">
                         <Sparkles className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{isKn ? 'ಇಂದಿನ ಒಟ್ಟು ಹೊಂದಾಣಿಕೆಗಳು' : 'Matching Pairs Found'}</div>
-                        <div className="text-lg font-black text-white mt-0.5">{filteredMatchups.length} {isKn ? 'ಜೋಡಿಗಳು' : 'Matches'}</div>
+                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">{isKn ? 'ಇಂದಿನ ಒಟ್ಟು ಹೊಂದಾಣಿಕೆಗಳು' : 'Matching Pairs Found'}</div>
+                        <div className="text-lg font-black text-slate-700 mt-0.5">{filteredMatchups.length} {isKn ? 'ಜೋಡಿಗಳು' : 'Matches'}</div>
                       </div>
                     </div>
 
-                    <div className="p-5 bg-slate-950/80 border border-slate-850 rounded-2xl flex items-center space-x-4">
-                      <div className="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                    <div className="p-5 bg-white border border-slate-850 rounded-2xl flex items-center space-x-4 shadow-sm">
+                      <div className="p-3 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 rounded-xl">
                         <TrendingUp className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{isKn ? 'ಖಾತರಿ ಜಮೀನುಗಳು' : 'Available Land Listings'}</div>
-                        <div className="text-lg font-black text-white mt-0.5">{sellersList.length} {isKn ? 'ಆಸ್ತಿಗಳು' : 'Properties'}</div>
+                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">{isKn ? 'ಖಾತರಿ ಜಮೀನುಗಳು' : 'Available Land Listings'}</div>
+                        <div className="text-lg font-black text-slate-700 mt-0.5">{sellersList.length} {isKn ? 'ಆಸ್ತಿಗಳು' : 'Properties'}</div>
                       </div>
                     </div>
 
-                    <div className="p-5 bg-slate-950/80 border border-slate-850 rounded-2xl flex items-center space-x-4">
-                      <div className="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl">
+                    <div className="p-5 bg-white border border-slate-850 rounded-2xl flex items-center space-x-4 shadow-sm">
+                      <div className="p-3 bg-indigo-500/10 text-indigo-600 border border-indigo-500/20 rounded-xl">
                         <Layers className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{isKn ? 'ಸಿದ್ಧ ಖರೀದಿದಾರರು' : 'Active Home/Land Buyers'}</div>
-                        <div className="text-lg font-black text-white mt-0.5">{buyersList.length} {isKn ? 'ಗ್ರಾಹಕರು' : 'Active Buyers'}</div>
+                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">{isKn ? 'ಸಿದ್ಧ ಖರೀದಿದಾರರು' : 'Active Home/Land Buyers'}</div>
+                        <div className="text-lg font-black text-slate-700 mt-0.5">{buyersList.length} {isKn ? 'ಗ್ರಾಹಕರು' : 'Active Buyers'}</div>
                       </div>
                     </div>
                   </div>
 
                   {/* Search and Filters */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-900/20 p-4 rounded-2xl border border-slate-850">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-4 rounded-2xl border border-slate-850 shadow-sm">
                     <div className="relative">
                       <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
                       <input
@@ -1970,7 +1970,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         placeholder={isKn ? 'ನಿಮ್ಮ ಪ್ರದೇಶ ನಮೂದಿಸಿ (ಉದಾಹರಣೆಗೆ: Whitefield, Devanahalli)...' : 'Type an area name (e.g. Devanahalli, Whitefield)...'}
                         value={matchupSearch}
                         onChange={(e) => setMatchupSearch(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-850 rounded-xl text-white text-xs focus:outline-none focus:border-amber-400 transition-colors placeholder-slate-500"
+                        className="w-full pl-10 pr-4 py-2.5 bg-[#FAF8F5] border border-slate-850 rounded-xl text-slate-700 text-xs focus:outline-none focus:border-amber-500 transition-colors placeholder-slate-400 font-sans"
                       />
                     </div>
 
@@ -1978,7 +1978,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                       <select
                         value={matchupTypeFilter}
                         onChange={(e) => setMatchupTypeFilter(e.target.value)}
-                        className="w-full px-4 py-2.5 bg-slate-950 border border-slate-850 rounded-xl text-white text-xs focus:outline-none focus:border-amber-400 transition-colors"
+                        className="w-full px-4 py-2.5 bg-[#FAF8F5] border border-slate-850 rounded-xl text-slate-700 text-xs focus:outline-none focus:border-amber-500 transition-colors font-sans"
                       >
                         <option value="All">{isKn ? 'ಎಲ್ಲಾ ಜಮೀನು/ನಿವೇಶನ ವಿಧಗಳು' : 'All Property Types'}</option>
                         <option value="Residential Plot">{isKn ? 'ವಸತಿ ನಿವೇಶನ (Plot/Layout)' : 'Residential Plot (Flat/Layout)'}</option>
@@ -1993,19 +1993,19 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                   {/* Matching Records */}
                   {loadingList && sellersList.length === 0 ? (
                     <div className="text-center py-16 text-slate-500 font-mono text-xs">
-                      <Clock className="w-8 h-8 mx-auto mb-3 text-amber-400 animate-spin" />
+                      <Clock className="w-8 h-8 mx-auto mb-3 text-amber-500 animate-spin" />
                       <span>{isKn ? 'ಹೊಂದಾಣಿಕೆಯಾಗುವ ಗ್ರಾಹಕರನ್ನು ಹುಡುಕಲಾಗುತ್ತಿದೆ...' : 'Searching for direct matches in your location...'}</span>
                     </div>
                   ) : filteredMatchups.length === 0 ? (
-                    <div className="text-center py-16 max-w-lg mx-auto bg-slate-950/40 border border-dashed border-slate-800 rounded-3xl p-8 space-y-4">
-                      <div className="w-12 h-12 bg-slate-900 border border-slate-800 rounded-full flex items-center justify-center mx-auto text-slate-500">
-                        <AlertCircle className="w-5 h-5" />
+                    <div className="text-center py-16 max-w-lg mx-auto bg-white border border-dashed border-slate-850 rounded-3xl p-8 space-y-4 shadow-sm">
+                      <div className="w-12 h-12 bg-slate-900 border border-slate-850 rounded-full flex items-center justify-center mx-auto text-slate-400">
+                        <AlertCircle className="w-5 h-5 text-amber-500" />
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-white uppercase font-mono">
+                        <h4 className="text-sm font-bold text-slate-700 uppercase font-mono">
                           {isKn ? 'ಯಾವುದೇ ಸಕ್ರಿಯ ಹೊಂದಾಣಿಕೆಗಳಿಲ್ಲ' : 'No Matches Found Yet'}
                         </h4>
-                        <p className="text-xs text-slate-500 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ಈ ಪ್ರದೇಶದಲ್ಲಿ ಅಥವಾ ಈ ಬಜೆಟ್‌ನಲ್ಲಿ ಸದ್ಯಕ್ಕೆ ಹೊಂದಾಣಿಕೆಯಾಗುವ ಆಸ್ತಿ ಸಿಕ್ಕಿಲ್ಲ. ದಯವಿಟ್ಟು ಬೇರೆ ಬಡಾವಣೆಯನ್ನು ಪರಿಶೀಲಿಸಿ ಅಥವಾ ನಿಮ್ಮ ವಿವರಗಳನ್ನು "ಜಮೀನು ಮಾರಾಟ ಮಾಡಿ" ಮೂಲಕ ನೋಂದಾಯಿಸಿ.'
                             : 'No seller properties align with active buyer requirements for this area. Register your plot or requirement to let the system link you automatically!'}
@@ -2038,21 +2038,21 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         return (
                           <div 
                             key={match.id} 
-                            className="bg-slate-950/95 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-700 transition-all shadow-xl flex flex-col"
+                            className="bg-white border border-slate-850 rounded-3xl overflow-hidden hover:border-slate-800 hover:shadow-md transition-all duration-300 flex flex-col"
                           >
                             {/* Card Header with friendly badge */}
-                            <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-850 flex items-center justify-between flex-wrap gap-2.5">
+                            <div className="px-5 py-3.5 bg-[#FAF8F5] border-b border-slate-850 flex items-center justify-between flex-wrap gap-2.5">
                               <div className="flex items-center space-x-2.5">
                                 <span className={`px-3 py-1 rounded-full text-[11px] font-bold border ${matchBadgeStyle}`}>
                                   {matchBadgeText}
                                 </span>
-                                <span className="text-[11px] text-slate-400 font-mono">
+                                <span className="text-[11px] text-slate-500 font-mono font-bold">
                                   🏢 {match.matchedLandType}
                                 </span>
                               </div>
-                              <div className="flex items-center space-x-1.5 text-slate-400 text-xs">
-                                <MapPin className="w-4 h-4 text-amber-400" />
-                                <span>{isKn ? 'ಬಡಾವಣೆ / ಏರಿಯಾ:' : 'Matched Area:'} <strong className="text-white font-mono">{match.matchedLocality}</strong></span>
+                              <div className="flex items-center space-x-1.5 text-slate-600 text-xs">
+                                <MapPin className="w-4 h-4 text-amber-500" />
+                                <span>{isKn ? 'ಬಡಾವಣೆ / ಏರಿಯಾ:' : 'Matched Area:'} <strong className="text-slate-700 font-mono font-black">{match.matchedLocality}</strong></span>
                               </div>
                             </div>
 
@@ -2060,37 +2060,37 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             <div className="p-5 sm:p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
                               
                               {/* SELLER COLUMN */}
-                              <div className="md:col-span-5 bg-slate-900/20 p-4.5 rounded-2xl border border-slate-850 space-y-3.5 flex flex-col justify-between">
+                              <div className="md:col-span-5 bg-slate-900 p-4.5 rounded-2xl border border-slate-850 space-y-3.5 flex flex-col justify-between">
                                 <div className="space-y-3">
                                   <div className="flex items-center justify-between">
-                                    <span className="text-xs font-black text-amber-400 font-mono uppercase tracking-wider">
+                                    <span className="text-xs font-black text-amber-600 font-mono uppercase tracking-wider">
                                       🏡 {isKn ? 'ಮಾಲೀಕರ ವಿವರ' : 'Seller\'s Plot'}
                                     </span>
-                                    <span className="text-[11px] text-slate-500">
-                                      {isKn ? 'ಮಾಲೀಕರು:' : 'Landowner:'} <strong className="text-slate-300">{formatName(match.seller.ownerName)}</strong>
+                                    <span className="text-[11px] text-slate-500 font-sans">
+                                      {isKn ? 'ಮಾಲೀಕರು:' : 'Landowner:'} <strong className="text-slate-700 font-bold">{formatName(match.seller.ownerName)}</strong>
                                     </span>
                                   </div>
 
-                                  <div className="space-y-2 text-xs">
+                                  <div className="space-y-2 text-xs font-sans">
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಸ್ಥಳ (Locality):' : 'Where is it:'}</span>
-                                      <span className="font-semibold text-white">{match.seller.locality}</span>
+                                      <span className="font-semibold text-slate-700">{match.seller.locality}</span>
                                     </div>
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಜಮೀನಿನ ಅಳತೆ (Size):' : 'Plot Size:'}</span>
-                                      <span className="font-bold text-slate-300 font-mono">{match.seller.landSize?.toLocaleString()} Sq.Ft.</span>
+                                      <span className="font-bold text-slate-700 font-mono">{match.seller.landSize?.toLocaleString()} Sq.Ft.</span>
                                     </div>
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ದಿಕ್ಕು (Facing):' : 'Facing:'}</span>
-                                      <span className="text-slate-300 font-mono">{match.seller.facing || 'East'}</span>
+                                      <span className="text-slate-700 font-mono font-bold">{match.seller.facing || 'East'}</span>
                                     </div>
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಖಾತಾ ಪತ್ರ:' : 'Documents / Khata:'}</span>
-                                      <span className="font-semibold text-slate-300">{match.seller.khataType || 'A Khata'}</span>
+                                      <span className="font-semibold text-slate-700">{match.seller.khataType || 'A Khata'}</span>
                                     </div>
                                     <div className="flex justify-between pt-1">
                                       <span className="text-slate-500">{isKn ? 'ಅಪೇಕ್ಷಿತ ಬೆಲೆ:' : 'Expected Price:'}</span>
-                                      <span className="font-black text-amber-400 font-mono text-sm">{formatPriceToINR(String(match.seller.expectedPrice))}</span>
+                                      <span className="font-black text-amber-600 font-mono text-sm">{formatPriceToINR(String(match.seller.expectedPrice))}</span>
                                     </div>
                                   </div>
                                 </div>
@@ -2098,48 +2098,48 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                               {/* VISUAL CONNECTOR BRIDGE */}
                               <div className="md:col-span-2 flex flex-col items-center justify-center py-4 md:py-0 text-center space-y-2">
-                                <div className="h-full w-px bg-slate-800 hidden md:block"></div>
-                                <div className="p-3 bg-slate-900 border border-slate-800 rounded-full text-amber-400 shrink-0">
+                                <div className="h-full w-px bg-slate-850 hidden md:block"></div>
+                                <div className="p-3 bg-[#FAF8F5] border border-slate-850 rounded-full text-amber-500 shrink-0 shadow-sm">
                                   <ArrowRight className="w-5 h-5 rotate-90 md:rotate-0" />
                                 </div>
                                 <span className="text-[10px] font-bold text-slate-500 font-mono tracking-widest uppercase">
                                   {isKn ? 'ನೇರ ಒಪ್ಪಂದ' : 'DIRECT LINK'}
                                 </span>
-                                <div className="h-full w-px bg-slate-800 hidden md:block"></div>
+                                <div className="h-full w-px bg-slate-850 hidden md:block"></div>
                               </div>
 
                               {/* BUYER COLUMN */}
-                              <div className="md:col-span-5 bg-slate-900/20 p-4.5 rounded-2xl border border-slate-850 space-y-3.5 flex flex-col justify-between">
+                              <div className="md:col-span-5 bg-slate-900 p-4.5 rounded-2xl border border-slate-850 space-y-3.5 flex flex-col justify-between">
                                 <div className="space-y-3">
                                   <div className="flex items-center justify-between">
-                                    <span className="text-xs font-black text-indigo-400 font-mono uppercase tracking-wider">
+                                    <span className="text-xs font-black text-amber-600 font-mono uppercase tracking-wider">
                                       🎯 {isKn ? 'ಖರೀದಿದಾರರ ಬೇಡಿಕೆ' : 'Buyer\'s Search'}
                                     </span>
-                                    <span className="text-[11px] text-slate-500">
-                                      {isKn ? 'ಖರೀದಿದಾರರು:' : 'Buyer:'} <strong className="text-slate-300">{formatName(match.buyer.buyerName)}</strong>
+                                    <span className="text-[11px] text-slate-500 font-sans">
+                                      {isKn ? 'ಖರೀದಿದಾರರು:' : 'Buyer:'} <strong className="text-slate-700 font-bold">{formatName(match.buyer.buyerName)}</strong>
                                     </span>
                                   </div>
 
-                                  <div className="space-y-2 text-xs">
+                                  <div className="space-y-2 text-xs font-sans">
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಬಯಸಿದ ಪ್ರದೇಶಗಳು:' : 'Desired Locations:'}</span>
-                                      <span className="font-semibold text-white max-w-[150px] truncate" title={match.buyer.preferredLocalities}>{match.buyer.preferredLocalities}</span>
+                                      <span className="font-semibold text-slate-700 max-w-[150px] truncate" title={match.buyer.preferredLocalities}>{match.buyer.preferredLocalities}</span>
                                     </div>
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಕನಿಷ್ಠ ಅಳತೆ:' : 'Min Size Required:'}</span>
-                                      <span className="font-bold text-slate-300 font-mono">{match.buyer.minSize?.toLocaleString()} Sq.Ft.</span>
+                                      <span className="font-bold text-slate-700 font-mono">{match.buyer.minSize?.toLocaleString()} Sq.Ft.</span>
                                     </div>
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಖಾತ ಆದ್ಯತೆ:' : 'Document Preference:'}</span>
-                                      <span className="text-slate-300 font-semibold">{match.buyer.preferredKhata || 'A Khata Only'}</span>
+                                      <span className="text-slate-700 font-semibold">{match.buyer.preferredKhata || 'A Khata Only'}</span>
                                     </div>
                                     <div className="flex justify-between border-b border-slate-850/50 pb-2">
                                       <span className="text-slate-500">{isKn ? 'ಉದ್ದೇಶ (Purpose):' : 'Purpose:'}</span>
-                                      <span className="font-semibold text-slate-300 max-w-[140px] truncate">{match.buyer.purpose || 'Residential'}</span>
+                                      <span className="font-semibold text-slate-700 max-w-[140px] truncate">{match.buyer.purpose || 'Residential'}</span>
                                     </div>
                                     <div className="flex justify-between pt-1">
                                       <span className="text-slate-500">{isKn ? 'ಗರಿಷ್ಠ ಬಜೆಟ್:' : 'Max Budget:'}</span>
-                                      <span className="font-black text-emerald-400 font-mono text-sm">{formatPriceToINR(String(match.buyer.maxBudget))}</span>
+                                      <span className="font-black text-emerald-600 font-mono text-sm">{formatPriceToINR(String(match.buyer.maxBudget))}</span>
                                     </div>
                                   </div>
                                 </div>
@@ -2148,14 +2148,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             </div>
 
                             {/* Contact Lock/Unlock Status panel */}
-                            <div className="px-5 py-4 bg-slate-900/50 border-t border-slate-850">
+                            <div className="px-5 py-4 bg-[#FAF8F5]/50 border-t border-slate-850">
                               {!isAdminUnlocked ? (
                                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                                  <div className="flex items-center space-x-3 text-slate-400 text-xs">
-                                    <div className="p-2 bg-amber-400/10 text-amber-500 rounded-lg shrink-0">
-                                      <Lock className="w-4 h-4 animate-pulse" />
+                                  <div className="flex items-center space-x-3 text-slate-500 text-xs font-sans">
+                                    <div className="p-2 bg-amber-500/10 text-amber-600 border border-amber-500/20 rounded-lg shrink-0">
+                                      <Lock className="w-4 h-4 animate-pulse text-amber-500" />
                                     </div>
-                                    <span className="text-xs leading-relaxed text-slate-400">
+                                    <span className="text-xs leading-relaxed text-slate-500">
                                       {isKn 
                                         ? '🔒 ಸುರಕ್ಷತೆಯ ದೃಷ್ಟಿಯಿಂದ ನಂಬರ್‌ಗಳನ್ನು ಮರೆಮಾಡಲಾಗಿದೆ. ಇಬ್ಬರನ್ನೂ ಸುರಕ್ಷಿತವಾಗಿ ಜೋಡಿಸಲು ನಮಗೆ ತಿಳಿಸಿ.'
                                         : '🔒 Contact details are encrypted for privacy. Click below to request our MMB Advisors to link both parties securely.'}
@@ -2167,40 +2167,40 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                                       setActiveTab('admin');
                                       window.scrollTo({ top: 300, behavior: 'smooth' });
                                     }}
-                                    className="px-4.5 py-2.5 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 font-bold font-mono text-[10px] uppercase tracking-wider rounded-xl cursor-pointer transition-colors shrink-0"
+                                    className="px-4.5 py-2.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-600 font-bold font-mono text-[10px] uppercase tracking-wider rounded-xl cursor-pointer transition-colors shrink-0"
                                   >
                                     🔑 {isKn ? 'ಅಡ್ಮಿನ್ ಪಾಸ್‌ಕೋಡ್ ನಮೂದಿಸಿ' : 'Unlock Direct Numbers'}
                                   </button>
                                 </div>
                               ) : (
                                 <div className="space-y-4">
-                                  <div className="flex items-center space-x-2 text-emerald-400 text-xs font-bold font-mono">
-                                    <Unlock className="w-4 h-4 shrink-0" />
+                                  <div className="flex items-center space-x-2 text-emerald-600 text-xs font-bold font-mono">
+                                    <Unlock className="w-4 h-4 shrink-0 text-emerald-500" />
                                     <span>CONTACT DETAILS DISCLOSED</span>
                                   </div>
 
                                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
                                     {/* Seller Contact */}
-                                    <div className="p-3 bg-slate-950 border border-slate-850 rounded-2xl space-y-2">
+                                    <div className="p-3 bg-white border border-slate-850 rounded-2xl space-y-2 shadow-sm">
                                       <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Seller Contact Info:</div>
                                       <div className="space-y-1">
-                                        <div className="text-white font-bold">{match.seller.ownerName}</div>
-                                        <div className="text-amber-400 font-semibold">{match.seller.phone}</div>
-                                        {match.seller.email && <div className="text-slate-400 text-[11px] truncate">{match.seller.email}</div>}
+                                        <div className="text-slate-700 font-black">{match.seller.ownerName}</div>
+                                        <div className="text-amber-600 font-bold">{match.seller.phone}</div>
+                                        {match.seller.email && <div className="text-slate-500 text-[11px] truncate font-sans">{match.seller.email}</div>}
                                       </div>
                                       <div className="flex gap-2 pt-1">
                                         <a
                                           href={`tel:${match.seller.phone}`}
-                                          className="flex-1 py-1.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-300 text-center rounded-lg font-bold text-[10px] uppercase tracking-wider flex items-center justify-center space-x-1"
+                                          className="flex-1 py-1.5 bg-[#FAF8F5] hover:bg-[#E8E3DD] border border-slate-850 text-slate-700 text-center rounded-lg font-bold text-[10px] uppercase tracking-wider flex items-center justify-center space-x-1"
                                         >
-                                          <Phone className="w-3 h-3" />
+                                          <Phone className="w-3 h-3 text-amber-500" />
                                           <span>Call Seller</span>
                                         </a>
                                         <a
                                           href={`https://wa.me/91${match.seller.phone}?text=${encodeURIComponent(`Hello ${match.seller.ownerName}, we have a matching buyer for your land in ${match.matchedLocality}. Size: ${match.seller.landSize} SqFt. Let's discuss!`)}`}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className="p-1.5 bg-emerald-500/10 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/20 rounded-lg"
+                                          className="p-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 border border-emerald-500/20 rounded-lg"
                                           title="WhatsApp Chat"
                                         >
                                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -2209,26 +2209,26 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                                     </div>
 
                                     {/* Buyer Contact */}
-                                    <div className="p-3 bg-slate-950 border border-slate-850 rounded-2xl space-y-2">
+                                    <div className="p-3 bg-white border border-slate-850 rounded-2xl space-y-2 shadow-sm">
                                       <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Buyer Contact Info:</div>
                                       <div className="space-y-1">
-                                        <div className="text-white font-bold">{match.buyer.buyerName}</div>
-                                        <div className="text-amber-400 font-semibold">{match.buyer.phone}</div>
-                                        {match.buyer.email && <div className="text-slate-400 text-[11px] truncate">{match.buyer.email}</div>}
+                                        <div className="text-slate-700 font-black">{match.buyer.buyerName}</div>
+                                        <div className="text-amber-600 font-bold">{match.buyer.phone}</div>
+                                        {match.buyer.email && <div className="text-slate-500 text-[11px] truncate font-sans">{match.buyer.email}</div>}
                                       </div>
                                       <div className="flex gap-2 pt-1">
                                         <a
                                           href={`tel:${match.buyer.phone}`}
-                                          className="flex-1 py-1.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-300 text-center rounded-lg font-bold text-[10px] uppercase tracking-wider flex items-center justify-center space-x-1"
+                                          className="flex-1 py-1.5 bg-[#FAF8F5] hover:bg-[#E8E3DD] border border-slate-850 text-slate-700 text-center rounded-lg font-bold text-[10px] uppercase tracking-wider flex items-center justify-center space-x-1"
                                         >
-                                          <Phone className="w-3 h-3" />
+                                          <Phone className="w-3 h-3 text-amber-500" />
                                           <span>Call Buyer</span>
                                         </a>
                                         <a
                                           href={`https://wa.me/91${match.buyer.phone}?text=${encodeURIComponent(`Hello ${match.buyer.buyerName}, we found a verified plot in ${match.matchedLocality} matching your budget of ${formatPriceToINR(String(match.buyer.maxBudget))}. Let's discuss!`)}`}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className="p-1.5 bg-emerald-500/10 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/20 rounded-lg"
+                                          className="p-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 border border-emerald-500/20 rounded-lg"
                                           title="WhatsApp Chat"
                                         >
                                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -2242,7 +2242,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                                     href={`https://wa.me/916366310992?text=${encodeURIComponent(`🏢 *MATCH BRIDGE INITIATED*\n\n📍 *Locality:* ${match.matchedLocality}\n🏢 *Land Type:* ${match.matchedLandType}\n\n👤 *Seller:* ${match.seller.ownerName} (${match.seller.phone})\n💰 *Asking:* ${formatPriceToINR(String(match.seller.expectedPrice))}\n\n👤 *Buyer:* ${match.buyer.buyerName} (${match.buyer.phone})\n💰 *Budget:* ${formatPriceToINR(String(match.buyer.maxBudget))}\n\nLet's bridge this transaction immediately.`)}`}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black font-mono text-[10px] uppercase tracking-wider text-center rounded-xl flex items-center justify-center space-x-1.5"
+                                    className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-black font-mono text-[10px] uppercase tracking-wider text-center rounded-xl flex items-center justify-center space-x-1.5 shadow-sm transition-colors"
                                   >
                                     <Sparkles className="w-3.5 h-3.5" />
                                     <span>Bridge Deal via MMB Realtors Support Group</span>
@@ -2269,15 +2269,15 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                 >
                   {!isAdminUnlocked ? (
                     <form onSubmit={handleUnlockAdmin} className="max-w-md mx-auto py-8 text-center space-y-6">
-                      <div className="w-14 h-14 bg-amber-500/15 border border-amber-500/30 rounded-full flex items-center justify-center mx-auto text-amber-400">
-                        <Database className="w-6 h-6 animate-pulse" />
+                      <div className="w-14 h-14 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center mx-auto text-amber-600 shadow-sm">
+                        <Database className="w-6 h-6" />
                       </div>
 
                       <div className="space-y-2">
-                        <h4 className="text-lg font-bold text-white uppercase tracking-wider font-mono">
+                        <h4 className="text-lg font-bold text-slate-700 uppercase tracking-wider font-mono">
                           {isKn ? 'ಖಾಸಗಿ ಏಜೆನ್ಸಿ ಪ್ರವೇಶ' : 'Secure Agent Verification'}
                         </h4>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed font-sans">
                           {isKn 
                             ? 'ನೋಂದಾಯಿತ ಗ್ರಾಹಕರ ವೈಯಕ್ತಿಕ ಫೋನ್ ನಂಬರ್ ಮತ್ತು ಇಮೇಲ್ ವಿವರಗಳನ್ನು ಪಡೆಯಲು ಏಜೆನ್ಸಿ ಪಾಸ್‌ಕೋಡ್ ಅಗತ್ಯವಿದೆ.'
                             : 'This is the control panel to directly fetch and retrieve registered seller land assets and buyer demands. Enter your passcode below.'}
@@ -2291,24 +2291,24 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder={isKn ? 'ಪಾಸ್‌ಕೋಡ್ ನಮೂದಿಸಿ (MMB2026)' : 'Enter Passcode (MMB2026)'}
                             value={passcode}
                             onChange={(e) => setPasscode(e.target.value)}
-                            className="w-full px-4.5 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm text-center focus:outline-none focus:border-amber-400 transition-colors font-mono tracking-widest"
+                            className="w-full px-4.5 py-3.5 bg-white border border-slate-850 rounded-xl text-slate-700 text-sm text-center focus:outline-none focus:border-amber-500 transition-colors font-mono tracking-widest shadow-sm"
                           />
                         </div>
                         
                         {passcodeError && (
-                          <p className="text-xs text-rose-400 font-mono">
+                          <p className="text-xs text-rose-500 font-mono">
                             ⚠️ {isKn ? 'ತಪ್ಪಾದ ಪಾಸ್‌ಕೋಡ್! ದಯವಿಟ್ಟು "MMB2026" ಅಥವಾ "1234" ಬಳಸಿ.' : 'Invalid passcode! Try "MMB2026" or "1234".'}
                           </p>
                         )}
 
                         <p className="text-[10px] text-slate-500 font-mono italic">
-                          💡 Hint: Enter <span className="text-amber-400 font-bold">MMB2026</span> to unlock the database dashboard.
+                          💡 Hint: Enter <span className="text-amber-600 font-bold">MMB2026</span> to unlock the database dashboard.
                         </p>
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full py-3.5 bg-amber-400 hover:bg-amber-500 text-slate-950 font-black font-mono text-xs uppercase tracking-wider rounded-xl cursor-pointer"
+                        className="w-full py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-black font-mono text-xs uppercase tracking-wider rounded-xl cursor-pointer shadow-sm transition-colors"
                       >
                         {isKn ? 'ಡೇಟಾಬೇಸ್ ಅನ್‌ಲಾಕ್ ಮಾಡಿ' : 'Authenticate & Fetch'}
                       </button>
@@ -2317,17 +2317,17 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                     <div className="space-y-6">
                       
                       {/* Active Admin Header */}
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-800 pb-4 gap-4">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-850 pb-4 gap-4">
                         <div className="flex items-center space-x-3">
                           <span className="flex h-2.5 w-2.5 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                           </span>
                           <div>
-                            <h4 className="text-base font-bold text-white font-mono">
+                            <h4 className="text-base font-bold text-slate-700 font-mono">
                               {isKn ? 'ಏಜೆನ್ಸಿ ರಿಯಲ್-ಟೈಮ್ ಕಂಟ್ರೋಲ್ ಡೆಸ್ಕ್' : 'Real-time Registration Control'}
                             </h4>
-                            <p className="text-xs text-slate-500">
+                            <p className="text-xs text-slate-500 font-sans">
                               {isKn ? 'ಒಟ್ಟು ನೋಂದಣಿಗಳು:' : 'Total Active database sync:'} {sellersList.length} Sellers | {buyersList.length} Buyers
                             </p>
                           </div>
@@ -2336,14 +2336,14 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                         <div className="flex items-center space-x-3.5">
                           <button
                             onClick={fetchAdminData}
-                            className="px-3 py-1.5 bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg text-xs font-bold font-mono text-slate-400 hover:text-white cursor-pointer"
+                            className="px-3 py-1.5 bg-white border border-slate-850 hover:bg-[#FAF8F5] rounded-lg text-xs font-bold font-mono text-slate-500 hover:text-slate-700 cursor-pointer transition-colors shadow-sm"
                           >
                             🔄 {isKn ? 'ತಾಜಾ ಮಾಡಿ' : 'Reload'}
                           </button>
 
                           <button
                             onClick={handleLockAdmin}
-                            className="px-3 py-1.5 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 rounded-lg text-xs font-bold font-mono cursor-pointer"
+                            className="px-3 py-1.5 bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 border border-rose-500/20 rounded-lg text-xs font-bold font-mono cursor-pointer transition-colors"
                           >
                             🔒 {isKn ? 'ಲಾಕ್ ಮಾಡಿ' : 'Lock Desk'}
                           </button>
@@ -2359,7 +2359,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                             placeholder={isKn ? 'ಹೆಸರು, ಪ್ರದೇಶ ಅಥವಾ ಫೋನ್ ಮೂಲಕ ಹುಡುಕಿ...' : 'Search by name, location, phone...'}
                             value={adminSearch}
                             onChange={(e) => setAdminSearch(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-xs focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-850 rounded-xl text-slate-700 text-xs focus:outline-none focus:border-amber-500 transition-colors placeholder-slate-400 font-sans shadow-sm"
                           />
                         </div>
 
@@ -2367,7 +2367,7 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                           <select
                             value={adminLocalityFilter}
                             onChange={(e) => setAdminLocalityFilter(e.target.value)}
-                            className="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-white text-xs focus:outline-none focus:border-amber-400 transition-colors"
+                            className="w-full px-4 py-2.5 bg-white border border-slate-850 rounded-xl text-slate-700 text-xs focus:outline-none focus:border-amber-500 transition-colors font-sans shadow-sm"
                           >
                             <option value="All">{isKn ? 'ಎಲ್ಲಾ ಪ್ರದೇಶಗಳು' : 'All Localities'}</option>
                             {bangaloreLocalities.map((loc, idx) => (
@@ -2380,18 +2380,18 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                           <button
                             onClick={() => downloadCSV('sellers')}
                             disabled={filteredSellers.length === 0}
-                            className="flex-1 py-2.5 px-3 bg-slate-900 hover:bg-slate-850 border border-slate-800 disabled:opacity-50 text-white rounded-xl text-xs font-mono font-bold flex items-center justify-center space-x-1.5 cursor-pointer"
+                            className="flex-1 py-2.5 px-3 bg-white hover:bg-[#FAF8F5] border border-slate-850 disabled:opacity-50 text-slate-600 rounded-xl text-xs font-mono font-bold flex items-center justify-center space-x-1.5 cursor-pointer shadow-sm transition-colors"
                           >
-                            <Download className="w-3.5 h-3.5 text-amber-400" />
+                            <Download className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಮಾರಾಟಗಾರರ CSV' : 'Sellers CSV'}</span>
                           </button>
                           
                           <button
                             onClick={() => downloadCSV('buyers')}
                             disabled={filteredBuyers.length === 0}
-                            className="flex-1 py-2.5 px-3 bg-slate-900 hover:bg-slate-850 border border-slate-800 disabled:opacity-50 text-white rounded-xl text-xs font-mono font-bold flex items-center justify-center space-x-1.5 cursor-pointer"
+                            className="flex-1 py-2.5 px-3 bg-white hover:bg-[#FAF8F5] border border-slate-850 disabled:opacity-50 text-slate-600 rounded-xl text-xs font-mono font-bold flex items-center justify-center space-x-1.5 cursor-pointer shadow-sm transition-colors"
                           >
-                            <Download className="w-3.5 h-3.5 text-amber-400" />
+                            <Download className="w-3.5 h-3.5 text-amber-500" />
                             <span>{isKn ? 'ಖರೀದಿದಾರರ CSV' : 'Buyers CSV'}</span>
                           </button>
                         </div>
@@ -2399,12 +2399,12 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
 
                       {loadingList ? (
                         <div className="text-center py-12 text-slate-500 font-mono text-xs">
-                          <Clock className="w-6 h-6 mx-auto mb-2 text-amber-400 animate-spin" />
+                          <Clock className="w-6 h-6 mx-auto mb-2 text-amber-500 animate-spin" />
                           <span>{isKn ? 'ಫೈರ್‌ಸ್ಟೋರ್ ಡೇಟಾಬೇಸ್‌ನಿಂದ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ...' : 'Fetching live cloud registers...'}</span>
                         </div>
                       ) : listError ? (
-                        <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-2xl flex items-center space-x-2.5 text-rose-400 text-xs">
-                          <AlertCircle className="w-4 h-4 shrink-0" />
+                        <div className="p-4 bg-rose-500/10 border border-rose-500/20 rounded-2xl flex items-center space-x-2.5 text-rose-600 text-xs font-sans">
+                          <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
                           <span>{listError}</span>
                         </div>
                       ) : (
@@ -2413,144 +2413,262 @@ Please connect me with the owner and help me with the legal audit. Thank you!`;
                           {/* Sellers Listings section */}
                           <div>
                             <div className="flex items-center justify-between mb-4">
-                              <h5 className="text-xs font-black uppercase text-amber-400 tracking-wider font-mono flex items-center space-x-2">
-                                <TrendingUp className="w-3.5 h-3.5" />
+                              <h5 className="text-xs font-black uppercase text-amber-600 tracking-wider font-mono flex items-center space-x-2">
+                                <TrendingUp className="w-3.5 h-3.5 text-amber-500" />
                                 <span>{isKn ? 'ಖರೀದಿಗೆ ಲಭ್ಯವಿರುವ ಜಮೀನುಗಳು' : 'Registered Lands to Sell'} ({filteredSellers.length})</span>
                               </h5>
                             </div>
 
                             {filteredSellers.length === 0 ? (
-                              <p className="text-xs text-slate-500 font-mono bg-slate-950/40 p-6 rounded-2xl border border-dashed border-slate-800 text-center">
+                              <p className="text-xs text-slate-500 font-mono bg-white p-6 rounded-2xl border border-dashed border-slate-850 text-center shadow-sm">
                                 {isKn ? 'ಯಾವುದೇ ಮಾರಾಟಗಾರರ ಆಸ್ತಿ ಹೊಂದಿಕೆಯಾಗಿಲ್ಲ.' : 'No registered land sellers found matching filters.'}
                               </p>
                             ) : (
-                              <div className="overflow-x-auto rounded-2xl border border-slate-850">
-                                <table className="w-full text-left border-collapse text-xs">
-                                  <thead>
-                                    <tr className="bg-slate-950 border-b border-slate-850 text-slate-400 font-mono font-bold uppercase tracking-wider text-[10px]">
-                                      <th className="p-4">Owner Name</th>
-                                      <th className="p-4">Locality</th>
-                                      <th className="p-4">Size (SqFt)</th>
-                                      <th className="p-4">Facing</th>
-                                      <th className="p-4">Expected Price</th>
-                                      <th className="p-4">Khata / Survey No</th>
-                                      <th className="p-4 text-right">Actions</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody className="divide-y divide-slate-850">
-                                    {filteredSellers.map((item, idx) => (
-                                      <tr key={idx} className="hover:bg-slate-900/40 transition-colors">
-                                        <td className="p-4 font-bold text-white">
-                                          <div>{item.ownerName}</div>
-                                          <div className="text-[10px] text-slate-500 font-mono mt-0.5">{item.phone}</div>
-                                        </td>
-                                        <td className="p-4 text-slate-300">{item.locality}</td>
-                                        <td className="p-4 text-slate-300 font-mono font-medium">{item.landSize?.toLocaleString()}</td>
-                                        <td className="p-4 text-slate-400">{item.facing || 'N/A'}</td>
-                                        <td className="p-4 text-amber-400 font-bold font-mono">
-                                          {formatPriceToINR(String(item.expectedPrice))}
-                                        </td>
-                                        <td className="p-4">
-                                          <div className="text-slate-300 font-mono font-semibold">{item.khataType}</div>
-                                          <div className="text-[10px] text-slate-500 mt-0.5">Sy: {item.surveyNumber || 'N/A'}</div>
-                                        </td>
-                                        <td className="p-4 text-right">
-                                          <div className="flex items-center justify-end space-x-2">
-                                            <a
-                                              href={`tel:${item.phone}`}
-                                              className="p-1.5 bg-slate-950 border border-slate-800 rounded-lg hover:border-amber-400/40 text-slate-400 hover:text-amber-400"
-                                              title="Call Owner"
-                                            >
-                                              <Phone className="w-3.5 h-3.5" />
-                                            </a>
-                                            <a
-                                              href={`https://wa.me/91${item.phone}`}
-                                              target="_blank"
-                                              rel="noreferrer"
-                                              className="p-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 hover:bg-emerald-500/20"
-                                              title="Chat via WhatsApp"
-                                            >
-                                              <ArrowUpRight className="w-3.5 h-3.5" />
-                                            </a>
-                                          </div>
-                                        </td>
+                              <>
+                                {/* Mobile View Card List */}
+                                <div className="block sm:hidden space-y-4">
+                                  {filteredSellers.map((item, idx) => (
+                                    <div key={idx} className="bg-white border border-slate-850 rounded-2xl p-4.5 space-y-3 text-left shadow-sm">
+                                      <div className="flex justify-between items-start">
+                                        <div>
+                                          <div className="font-bold text-slate-700 text-sm font-sans">{item.ownerName}</div>
+                                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">{item.phone}</div>
+                                        </div>
+                                        <div className="text-right">
+                                          <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-600 border border-amber-500/20">
+                                            {item.khataType}
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div className="grid grid-cols-2 gap-3 text-xs border-t border-b border-slate-850/50 py-2.5 font-sans">
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Locality</span>
+                                          <span className="text-slate-600 font-semibold">{item.locality}</span>
+                                        </div>
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Expected Price</span>
+                                          <span className="text-amber-600 font-bold font-mono">{formatPriceToINR(String(item.expectedPrice))}</span>
+                                        </div>
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Size</span>
+                                          <span className="text-slate-600 font-mono">{item.landSize?.toLocaleString()} SqFt</span>
+                                        </div>
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Facing & Sy No</span>
+                                          <span className="text-slate-600">{item.facing || 'N/A'} (Sy: {item.surveyNumber || 'N/A'})</span>
+                                        </div>
+                                      </div>
+                                      <div className="flex gap-2 justify-end pt-1">
+                                        <a
+                                          href={`tel:${item.phone}`}
+                                          className="px-4.5 py-2 bg-[#FAF8F5] border border-slate-850 text-slate-700 text-center rounded-lg font-bold text-[10px] uppercase tracking-wider flex items-center justify-center space-x-1"
+                                        >
+                                          <Phone className="w-3 h-3 text-amber-500" />
+                                          <span>Call</span>
+                                        </a>
+                                        <a
+                                          href={`https://wa.me/91${item.phone}`}
+                                          target="_blank"
+                                          rel="noreferrer"
+                                          className="p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 rounded-lg flex items-center justify-center"
+                                          title="Chat via WhatsApp"
+                                        >
+                                          <ArrowUpRight className="w-4 h-4 text-emerald-500" />
+                                        </a>
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+
+                                {/* Desktop View Table */}
+                                <div className="hidden sm:block overflow-x-auto rounded-2xl border border-slate-850 bg-white shadow-sm">
+                                  <table className="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                      <tr className="bg-[#FAF8F5] border-b border-slate-850 text-slate-500 font-mono font-bold uppercase tracking-wider text-[10px]">
+                                        <th className="p-4">Owner Name</th>
+                                        <th className="p-4">Locality</th>
+                                        <th className="p-4">Size (SqFt)</th>
+                                        <th className="p-4">Facing</th>
+                                        <th className="p-4">Expected Price</th>
+                                        <th className="p-4">Khata / Survey No</th>
+                                        <th className="p-4 text-right">Actions</th>
                                       </tr>
-                                    ))}
-                                  </tbody>
-                                </table>
-                              </div>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-850">
+                                      {filteredSellers.map((item, idx) => (
+                                        <tr key={idx} className="hover:bg-[#FAF8F5]/40 transition-colors">
+                                          <td className="p-4 font-bold text-slate-700">
+                                            <div className="font-sans font-bold">{item.ownerName}</div>
+                                            <div className="text-[10px] text-slate-400 font-mono mt-0.5">{item.phone}</div>
+                                          </td>
+                                          <td className="p-4 text-slate-600 font-sans font-medium">{item.locality}</td>
+                                          <td className="p-4 text-slate-600 font-mono font-medium">{item.landSize?.toLocaleString()}</td>
+                                          <td className="p-4 text-slate-500 font-sans">{item.facing || 'N/A'}</td>
+                                          <td className="p-4 text-amber-600 font-bold font-mono">
+                                            {formatPriceToINR(String(item.expectedPrice))}
+                                          </td>
+                                          <td className="p-4 font-sans">
+                                            <div className="text-slate-700 font-mono font-bold">{item.khataType}</div>
+                                            <div className="text-[10px] text-slate-400 mt-0.5 font-mono">Sy: {item.surveyNumber || 'N/A'}</div>
+                                          </td>
+                                          <td className="p-4 text-right">
+                                            <div className="flex items-center justify-end space-x-2">
+                                              <a
+                                                href={`tel:${item.phone}`}
+                                                className="p-1.5 bg-[#FAF8F5] border border-slate-850 rounded-lg hover:border-amber-500/40 text-slate-500 hover:text-amber-600"
+                                                title="Call Owner"
+                                              >
+                                                <Phone className="w-3.5 h-3.5 text-amber-500" />
+                                              </a>
+                                              <a
+                                                href={`https://wa.me/91${item.phone}`}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="p-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-600 hover:bg-emerald-500/20"
+                                                title="Chat via WhatsApp"
+                                              >
+                                                <ArrowUpRight className="w-3.5 h-3.5 text-emerald-500" />
+                                              </a>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </>
                             )}
                           </div>
 
                           {/* Buyers Requirements section */}
                           <div>
                             <div className="flex items-center justify-between mb-4">
-                              <h5 className="text-xs font-black uppercase text-amber-400 tracking-wider font-mono flex items-center space-x-2">
-                                <Layers className="w-3.5 h-3.5" />
+                              <h5 className="text-xs font-black uppercase text-indigo-600 tracking-wider font-mono flex items-center space-x-2">
+                                <Layers className="w-3.5 h-3.5 text-indigo-500" />
                                 <span>{isKn ? 'ಖರೀದಿಗೆ ಆಸಕ್ತಿ ಉಳ್ಳ ಗ್ರಾಹಕರು' : 'Logged Purchase Requirements'} ({filteredBuyers.length})</span>
                               </h5>
                             </div>
 
                             {filteredBuyers.length === 0 ? (
-                              <p className="text-xs text-slate-500 font-mono bg-slate-950/40 p-6 rounded-2xl border border-dashed border-slate-800 text-center">
+                              <p className="text-xs text-slate-500 font-mono bg-white p-6 rounded-2xl border border-dashed border-slate-850 text-center shadow-sm">
                                 {isKn ? 'ಯಾವುದೇ ಖರೀದಿದಾರರ ಬೇಡಿಕೆ ಹೊಂದಿಕೆಯಾಗಿಲ್ಲ.' : 'No registered buy requests found matching filters.'}
                               </p>
                             ) : (
-                              <div className="overflow-x-auto rounded-2xl border border-slate-850">
-                                <table className="w-full text-left border-collapse text-xs">
-                                  <thead>
-                                    <tr className="bg-slate-950 border-b border-slate-850 text-slate-400 font-mono font-bold uppercase tracking-wider text-[10px]">
-                                      <th className="p-4">Buyer Name</th>
-                                      <th className="p-4">Preferred Localities</th>
-                                      <th className="p-4">Min SqFt Required</th>
-                                      <th className="p-4">Max Budget</th>
-                                      <th className="p-4">Desired Khata / Purpose</th>
-                                      <th className="p-4 text-right">Actions</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody className="divide-y divide-slate-850">
-                                    {filteredBuyers.map((item, idx) => (
-                                      <tr key={idx} className="hover:bg-slate-900/40 transition-colors">
-                                        <td className="p-4 font-bold text-white">
-                                          <div>{item.buyerName}</div>
-                                          <div className="text-[10px] text-slate-500 font-mono mt-0.5">{item.phone}</div>
-                                        </td>
-                                        <td className="p-4 text-slate-300 max-w-[180px] truncate" title={item.preferredLocalities}>
-                                          {item.preferredLocalities}
-                                        </td>
-                                        <td className="p-4 text-slate-300 font-mono font-medium">{item.minSize?.toLocaleString()}</td>
-                                        <td className="p-4 text-amber-400 font-bold font-mono">
-                                          {formatPriceToINR(String(item.maxBudget))}
-                                        </td>
-                                        <td className="p-4">
-                                          <div className="text-slate-300 font-mono font-semibold">{item.preferredKhata}</div>
-                                          <div className="text-[10px] text-slate-500 mt-0.5">{item.purpose}</div>
-                                        </td>
-                                        <td className="p-4 text-right">
-                                          <div className="flex items-center justify-end space-x-2">
-                                            <a
-                                              href={`tel:${item.phone}`}
-                                              className="p-1.5 bg-slate-950 border border-slate-800 rounded-lg hover:border-amber-400/40 text-slate-400 hover:text-amber-400"
-                                              title="Call Buyer"
-                                            >
-                                              <Phone className="w-3.5 h-3.5" />
-                                            </a>
-                                            <a
-                                              href={`https://wa.me/91${item.phone}`}
-                                              target="_blank"
-                                              rel="noreferrer"
-                                              className="p-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-400 hover:bg-emerald-500/20"
-                                              title="Chat via WhatsApp"
-                                            >
-                                              <ArrowUpRight className="w-3.5 h-3.5" />
-                                            </a>
-                                          </div>
-                                        </td>
+                              <>
+                                {/* Mobile View Card List */}
+                                <div className="block sm:hidden space-y-4">
+                                  {filteredBuyers.map((item, idx) => (
+                                    <div key={idx} className="bg-white border border-slate-850 rounded-2xl p-4.5 space-y-3 text-left shadow-sm">
+                                      <div className="flex justify-between items-start">
+                                        <div>
+                                          <div className="font-bold text-slate-700 text-sm font-sans">{item.buyerName}</div>
+                                          <div className="text-[10px] text-slate-400 font-mono mt-0.5">{item.phone}</div>
+                                        </div>
+                                        <div className="text-right">
+                                          <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-indigo-500/10 text-indigo-600 border border-indigo-500/20">
+                                            {item.preferredKhata || 'A Khata'}
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div className="grid grid-cols-2 gap-3 text-xs border-t border-b border-slate-850/50 py-2.5 font-sans">
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Preferred Areas</span>
+                                          <span className="text-slate-600 font-semibold truncate block max-w-[140px]" title={item.preferredLocalities}>
+                                            {item.preferredLocalities}
+                                          </span>
+                                        </div>
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Max Budget</span>
+                                          <span className="text-amber-600 font-bold font-mono">{formatPriceToINR(String(item.maxBudget))}</span>
+                                        </div>
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Min Size</span>
+                                          <span className="text-slate-600 font-mono">{item.minSize?.toLocaleString()} SqFt</span>
+                                        </div>
+                                        <div>
+                                          <span className="text-slate-400 block text-[10px] uppercase font-mono font-bold">Purpose</span>
+                                          <span className="text-slate-600 truncate block max-w-[140px]">{item.purpose || 'Residential'}</span>
+                                        </div>
+                                      </div>
+                                      <div className="flex gap-2 justify-end pt-1">
+                                        <a
+                                          href={`tel:${item.phone}`}
+                                          className="px-4.5 py-2 bg-[#FAF8F5] border border-slate-850 text-slate-700 text-center rounded-lg font-bold text-[10px] uppercase tracking-wider flex items-center justify-center space-x-1"
+                                        >
+                                          <Phone className="w-3 h-3 text-amber-500" />
+                                          <span>Call</span>
+                                        </a>
+                                        <a
+                                          href={`https://wa.me/91${item.phone}`}
+                                          target="_blank"
+                                          rel="noreferrer"
+                                          className="p-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 rounded-lg flex items-center justify-center"
+                                          title="Chat via WhatsApp"
+                                        >
+                                          <ArrowUpRight className="w-4 h-4 text-emerald-500" />
+                                        </a>
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+
+                                {/* Desktop View Table */}
+                                <div className="hidden sm:block overflow-x-auto rounded-2xl border border-slate-850 bg-white shadow-sm">
+                                  <table className="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                      <tr className="bg-[#FAF8F5] border-b border-slate-850 text-slate-500 font-mono font-bold uppercase tracking-wider text-[10px]">
+                                        <th className="p-4">Buyer Name</th>
+                                        <th className="p-4">Preferred Localities</th>
+                                        <th className="p-4">Min SqFt Required</th>
+                                        <th className="p-4">Max Budget</th>
+                                        <th className="p-4">Desired Khata / Purpose</th>
+                                        <th className="p-4 text-right">Actions</th>
                                       </tr>
-                                    ))}
-                                  </tbody>
-                                </table>
-                              </div>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-850">
+                                      {filteredBuyers.map((item, idx) => (
+                                        <tr key={idx} className="hover:bg-[#FAF8F5]/40 transition-colors">
+                                          <td className="p-4 font-bold text-slate-700">
+                                            <div className="font-sans font-bold">{item.buyerName}</div>
+                                            <div className="text-[10px] text-slate-400 font-mono mt-0.5">{item.phone}</div>
+                                          </td>
+                                          <td className="p-4 text-slate-600 font-sans max-w-[180px] truncate" title={item.preferredLocalities}>
+                                            {item.preferredLocalities}
+                                          </td>
+                                          <td className="p-4 text-slate-600 font-mono font-medium">{item.minSize?.toLocaleString()}</td>
+                                          <td className="p-4 text-amber-600 font-bold font-mono">
+                                            {formatPriceToINR(String(item.maxBudget))}
+                                          </td>
+                                          <td className="p-4 font-sans">
+                                            <div className="text-slate-700 font-mono font-bold">{item.preferredKhata}</div>
+                                            <div className="text-[10px] text-slate-400 mt-0.5">{item.purpose}</div>
+                                          </td>
+                                          <td className="p-4 text-right">
+                                            <div className="flex items-center justify-end space-x-2">
+                                              <a
+                                                href={`tel:${item.phone}`}
+                                                className="p-1.5 bg-[#FAF8F5] border border-slate-850 rounded-lg hover:border-amber-500/40 text-slate-400 hover:text-amber-600"
+                                                title="Call Buyer"
+                                              >
+                                                <Phone className="w-3.5 h-3.5 text-amber-500" />
+                                              </a>
+                                              <a
+                                                href={`https://wa.me/91${item.phone}`}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="p-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-600 hover:bg-emerald-500/20"
+                                                title="Chat via WhatsApp"
+                                              >
+                                                <ArrowUpRight className="w-3.5 h-3.5 text-emerald-500" />
+                                              </a>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </>
                             )}
                           </div>
 

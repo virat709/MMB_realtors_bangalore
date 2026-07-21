@@ -6,22 +6,22 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Custom high-fidelity royal sapphire-blue to midnight-black theme */
-  --color-slate-950: #01010c; /* Midnight black with a subtle blue hint */
-  --color-slate-900: #050624; /* Darkest sapphire blue */
-  --color-slate-850: #090c3d; /* Rich royal blue secondary background */
-  --color-slate-800: #12175a; /* Deep cobalt blue for cards/borders */
-  --color-slate-700: #1d2380; /* Vibrant cobalt accent border */
-  --color-slate-600: #2c35a6; /* Muted royal blue */
-  --color-slate-500: #64748b; /* Neutral slate-gray */
-  --color-slate-400: #94a3b8; /* Cool gray for readable body text */
-  --color-slate-300: #cbd5e1; /* Light gray for high-contrast text */
+  /* Custom high-fidelity luxury light cream/alabaster to rich obsidian-stone theme */
+  --color-slate-950: #FAF8F5; /* Premium soft ivory-cream linen background */
+  --color-slate-900: #FFFFFF; /* High-contrast crisp white for cards and floating containers */
+  --color-slate-850: #EFECE6; /* Warm sand-grey for subtle section separators/borders */
+  --color-slate-800: #E5DEC9; /* Warm gold-tinted stone for secondary elements and strong borders */
+  --color-slate-700: #1C1917; /* Deep obsidian stone-900 for high-contrast title text */
+  --color-slate-600: #44403C; /* Muted stone-700 for secondary text and sub-headers */
+  --color-slate-500: #78716C; /* Neutral stone-500 for descriptive body copy */
+  --color-slate-400: #A8A29E; /* Light stone-400 for structural lines and decorative accents */
+  --color-slate-300: #1C1917; /* High-contrast dark text replacement */
 
-  /* Pure golden amber accents directly matched to the brand logo */
-  --color-amber-300: #f5d493; /* Warm soft gold */
-  --color-amber-400: #e5b766; /* Elegant brand gold text/lines */
-  --color-amber-500: #d4af37; /* Classic metallic gold */
-  --color-amber-600: #aa7c11; /* Burnished dark gold */
+  /* High-end warm-amber bronze and brass directly matched to golden trust branding */
+  --color-amber-300: #F3E5D8; /* Creamy light bronze accent background */
+  --color-amber-400: #C29B51; /* Beautiful metallic gold-ochre for primary highlights and text */
+  --color-amber-500: #9E7431; /* Deep golden-bronze for buttons and primary CTAs */
+  --color-amber-600: #78350F; /* Rich chocolate burnished gold for hover states and text contrast */
 }
 
 /* Custom styling utilities for a luxurious real estate legal vibe */
